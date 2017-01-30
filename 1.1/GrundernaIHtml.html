@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grunderna i HTML5</title>
+</head>
+
+<body>
+<a id="start"></a> 
+<h1>Grunderna i HTML5</h1>
+<h2>Beskrivning av begrepp</h2>
+<p><b>Doctype</b> - en speciell kod som står på första raden i varje HTML-dokument. 
+Visar webbläsaren vilken version av HTML som sidan är skriven i. För HTML5 skrivs den första raden enligt följande: <br>
+<code>&lt;!DOCTYPE html&gt;</code>.</p>
+<p><b>Teckenkod</b> - standarden som förklarar för datorn hur en text ska konverteras till en sekvens av bytes då den sparas i en fil,
+och hur den ska konverteras tillbaks när filen öppnas. De flesta engelskspråkiga webbsidor som finns idag använder en teckenkod som
+kallas UTF-8. Denna stödjer alla icke-engelskspråkiga tecken. Ofta är webbservern där webbsidan finns konfigurerad så att UTF-8 ska 
+användas, men för att undvika eventuella felaktigheter om detta inte är gjort är det bra att ange informationen i HTML-dokumentet.
+För att ange detta i HTML5 lägger man till ett <code>&lt;meta&gt;</code>-element i början av <code>&lt;head&gt;</code>-sektionen, alternativt direkt efter Doctype 
+om man inte har definierat ett <code>&lt;head&gt;</code>-element. Raden skrivs enligt följande:
+<code>&lt;meta charset="utf-8"&gt;</code>.</p>
+<p><b>Språk</b> - Det är möjligt att ange en webbsidas språk i HTML-dokumentet. Detta kan vara bra för att tex sökmotorer ska kunna veta
+när de ska inkludera en webbsida vid sökning på ett visst språk. För att definiera språket på en webbsida lägger man till lang-attributet
+till något element, tillsammans med önskad språkkod. Det enklaste sättet att definiera detta på är att lägga till lang-attributet
+i html-elementet. För engelskt språk görs detta enligt följande:
+<code>&lt;html lang="en"&gt;</code>.</p>
+<p><b>Validering</b> - Det är möjligt att validera ett HTML5-dokument med ett valideringsverktyg, för att hitta eventuella problem i sidstrukturen.
+Valideringsverktyget kan bland annat hitta eventuella obligatoriska element som saknas (tex. <code>&lt;title&gt;</code>), om det finns en start-tagg utan en matchande slut-tagg, 
+felaktigt nästlade taggar, taggar som saknar attribut (tex <code>&lt;img&gt;</code> utan ett src-attribut). Det finns ofta möjlighet att validera koden i 
+ett webbdesignverktyg som Dreamweaver, men det finns också valideringsverktyg på webben.W3C standards organization har ett populärt valideringsverktyg
+på http://validator.w3.org. Där kan man antingen hänvisa till en url som man vill validera, ladda upp en fil eller kopiera in kod som man vill validera.</p>
+<p><b>Hur ett HTML-dokument är uppbyggt</b> - Ett HTML-dokument är uppbyggt av tre delar; en rad som anger dokumentets version av HTML (se informationen om Doctype ovan), 
+en header-sektion som innehåller dokumentets titel, meta-element, referenser till sidmallar och JavaScript-filer, och en body-sektion som inkluderar 
+dokumentets synliga innehåll. Vanligen är head-sektionen omgiven av <code>&lt;head&gt;</code>-element och body-sektionen av <code>&lt;body&gt;</code>-element, för att tydligt separera dessa
+delar från varandra, men det är också möjligt att utelämna dessa taggar. Det vanligaste är också att omge head- och body-sektionen med ett <code>&lt;html&gt;</code>-element. Då blir
+den slutliga strukturen så här, för ett HTML5-dokument: <br>
+<code>&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&lt;meta charset="UTF-8"&gt;<br>
+&lt;title&gt;Dokumentets titel..&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+
+&lt;body&gt;<br>
+Dokumentets innehåll..<br>
+&lt;/body&gt;<br>
+
+&lt;/html&gt;<br></code>
+</p>
+
+<h2>Beskrivning av taggar, med exempel</h2>
+<h3>Struktur</h3>
+body - inkluderar ett HTML-dokuments synliga innehåll.<br>
+head - inkluderar metainformation om HTML-dokumentet.<br>
+html - HTML-dokumentets rotelement, som inkluderar head- och body-sektionen.<br>
+title - anger titeln för HTML-dokumentet.<br> 
+Ett enkelt exempel på ett HTML-dokument som innehåller dessa delar finns <a href="ExempelStruktur.html">här (länk)</a>. Se även "Hur ett HTML-dokument är uppbyggt" hur
+sidstrkturen kan se ut.
+<h3>Metainformation</h3> 
+Med hjälp av de olika meta-taggarna kan man ange metainformation om HTML-dokumentet. Dessa anges alltid inom head-elementet. Informationen visas inte på sidan men kan hittas maskinellt av sökmotorer,
+webbservicar etc. <br>
+meta-taggar med name-attributen: <br>
+author - namnet på dokumentets författare<br>
+description - kortfattad beskrivning av sidans innehåll<br>
+generator - specificerar ett av de mjukvarupaket som används för att bygga webbsidan.<br>
+keywords - en kommaseparerad lista med nyckelord som definierar sidan innehåll<br>
+robots - ger möjlighet att förklara för robotar att en sidas innehåll inte ska indexeras eller scannas för länkar att följa.<br>
+meta-taggar med attributet: <br>
+http-equiv - tillhandahåller en HTTP-rubrik för informationen i content-attributet.
+Ett exempel med de olika metataggarna finns <a href="ExempelMetataggar.html">här (länk)</a>. 
+<h3>Text</h3> 
+<p>abbr - definierar en förkortning eller akronym<br> 
+Exempel: 
+<abbr title="Förenta nationerna">FN</abbr> grundades år 1945.</p>
+<p>address - definierar kontaktinformation till författaren eller ägaren av ett dokument eller en artikel. Om elementet finns inuti <code>&lt;body&gt;</code>-elementet<br>
+representerar det kontaktinformation för dokumentet, medan det om det finns inuti ett <code>&lt;article&gt;</code>-element representerar kontaktinformation för artikeln.<br> 
+Exempel:
+<address>
+Skriven av <a href="mailto:author@example.com">Arne Arnesson</a>.<br> 
+Besök oss på:<br>
+Example.com<br>
+Box 123, STOCKHOLM<br>
+Sverige
+</address></p>
+<p>blockquote - specificerar en sektion av text som är tagen från en annan källa<br>
+Exempel:
+<p>Här är ett citat från Livsmedelsverkets webbsida:</p>
+<blockquote cite="http://www.livsmedelsverket.se">
+Hitta ditt sätt att äta grönare, lagom mycket och röra på dig.
+</blockquote></p>
+<p>br - lägger till en radbrytning i texten. Taggen används utan sluttagg.<br>
+Exempel:
+För att separera rader<br>i en text,<br>använd br-elementet.</p>
+<p>cite - definierar titeln på ett verk, tex en bok, film eller tv-serie.<br>
+Exempel:
+<cite>Djungelboken</cite> är en novellsamling som skrevs av Rudyard Kipling.</p></p>
+<p>code - definierar en bit datorkod i en text.<br>
+Exempel: 
+<code>Ett stycke datorkod</code></p>
+<p>dfn - representerar den "definierande instansen" (ofta första användningen) av en term i HTML.<br>
+Exempel: 
+<dfn>HTML</dfn> är det vanligaste märkspråket för att skapa webbsidor.</p>
+</p>
+<p>div - definierar en del eller sektion av ett dokument. Kan användas för att formatera en grupp block-element med CSS.<br>
+Exempel: 
+<div style="color:#AF96FF">
+  <p>Det här är en textrad i ett div-element.</p>
+</div></p>
+<p>em - används för att visa betonad text.<br>
+Exempel:
+<em>Betonad text</em></p>
+<p>h1, h2, h3, h4, h5, h6 - används för att definera HTML-rubriker, där h1 används för den mest relevanta rubriken medan h6 används för den minst relevanta rubriken.<br>
+Exempel:
+<h1>Rubrik 1</h1>
+<h2>Rubrik 2</h2>
+<h3>Rubrik 3</h3>
+<h4>Rubrik 4</h4>
+<h5>Rubrik 5</h5>
+<h6>Rubrik 6</h6> </p>
+<p>kbd - definierar inmatning från tangentbordet<br>
+Exempel:
+<kbd>Inmatning från tangentbordet</kbd></p>
+<p>p - definierar en paragraf. Webbläsare lägger automatiskt till lite extra marginal före och efter en paragraf (kan modifieras med CSS).<br>
+Exempel:
+<p>Första paragrafen.</p>
+<p>Andra paragrafen.</p></p>
+<p>pre - definierar preformaterad text, som tex ska behålla radbrytningar och extra mellanslag.<br>
+Exempel:
+<pre>
+Den här texten    står i ett
+pre element
+</pre>
+</p>
+<p>q - definierar en kort citering. Webbläsare lägger normalt till citationstecken runt citeringen.<br>
+Exempel:
+Organisationens mål är att: 
+<q>Bygga en hållbar framtid.</q>
+</p>
+<p>samp - definierar utdata från ett datorprogram.<br>
+Exempel:
+<samp>Utdata från ett datorprogram</samp></p>
+<p>span - används för att gruppera "inline"-element i ett dokument. Taggen medför ingen visuell ändring i sig själv, men kan modifieras med CSS.<br>
+Exempel:
+Himlen är <span style="color:blue;font-weight:bold">blå</span> och gräset är <span style="color:darkolivegreen;font-weight:bold">grönt</span>.
+</p>
+<p>strong - definierar viktig text. <br>
+Exempel:
+<strong>Viktig text</strong></p>
+<p>var - definierar en variabel.<br>
+Exempel:
+<var>En variabel</var></p>
+<h3>Hypertext, a</h3>
+Denna tagg används för att definiera en hyperlänk, vilken används för att länka en webbsida till en annan.
+Det finns olika typer av länkar: <br>
+Relativ länk - en relativ länk utgår från den sida man befinner sig på och används vanligtvis för länkar inom den egna webbsidan<br>
+Exempel: 
+Det här är en relativ länk som går till ett <a href="ExempelMetataggar.html">exempel med metataggar</a>.<br>
+Absolut länk - en absolut länk innehåller en fullständig specifik adress till en webbsida.<br>
+Exempel:
+Det här är en absolut länk som går till <a href="http://www.dn.se/">Dagens nyheter</a>.<br>
+Länk till ankare - en länk till ett ankare pekar alltid till en plats inom en sida. Ankaret specificeras med att ett #-tecken anges framför länkplatsen.<br>
+Exempel:
+Klicka <a href="#start">här</a> för att komma till början på sidan. <br>
+Bild-länk - en bild-länk är en länk där man använder en bild som själva länken.<br>
+Exempel:
+<a href="https://color.adobe.com/"><img src="colorpicker.png"></a><br>
+Länk till olika protokoll (exempelvis ftp) - det är möjligt att länka till andra protokoll än http, tex ftp. En ftp-länk behöver gå till en absolut adress.<br>
+Exempel:
+En <a href="ftp://[mappens eller filens adress]">ftp-länk</a>.<br>
+Mailto-länk - detta är en länk som innehåller en epostadress. Då man klickar på länken öppnas datorns epostprogram med den aktuella epostadressen förifylld i "Till"-fältet.<br>
+Exempel:
+Det här är en epostlänk: <a href="mailto:ansa3634@student.su.se?Subject=Hej" target="_top">Skicka mail</a> 
+<h3>Oordnad, ordnad och beskriven lista</h3> 
+dl - definierar en beskriven lista. Taggen används i kombination med dt- och dd-taggar (se nedan).<br> 
+dt - definierar termer eller namn som finns i en beskriven lista.<br>
+dd - beskriver varje term eller namn i en beskriven lista.<br>
+Exempel:<br>
+<dl>
+  <dt>Te</dt>
+  <dd>En varm dryck</dd>
+  <dt>Mjölk</dt>
+  <dd>En kall dryck</dd>
+</dl><br>
+ol - definierar en ordnad lista. Den ordnade listan kan antingen vara numerisk eller alfabetisk. Det är möjligt att nästla 
+ordnade listor. Listobjekt definieras med <code>&lt;li&gt;</code>-taggen (se nedan).<br>
+Exempel:
+<ol>
+  <li>Äpple</li>
+  <li>Päron</li>
+  <li>Banan</li>
+</ol><br>
+ul - definierar en oordnad lista. Varje ny rad markeras med en punkt, där punkttypen kan ändras med ett "type"-attribut.
+Listobjekt definieras med <code>&lt;li&gt;</code>-taggen (se nedan).<br>
+Exempel:
+<ul>
+  <li>Äpple</li>
+  <li>Päron</li>
+  <li>Banan</li>
+</ul><br>
+li - definierar ett listobjekt i en ordnad eller oordnad lista (se de två exemplen ovan).
+<h3>Tabell</h3> 
+caption
+col
+colgroup
+table
+tbody
+td
+tfoot
+th
+thead
+tr 
+<h3>Bild</h3> 
+img 
+<h3>Bildkartor</h3> 
+area
+map 
+</body>
+
+</html>
