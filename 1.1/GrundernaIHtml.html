@@ -199,21 +199,67 @@ Exempel:
 </ul><br>
 li - definierar ett listobjekt i en ordnad eller oordnad lista (se de två exemplen ovan).
 <h3>Tabell</h3> 
-caption
-col
-colgroup
-table
-tbody
-td
-tfoot
-th
-thead
-tr 
+caption - förklarande text om tabellen som står överst, direkt efter <code>&lt;table&gt;</code>-taggen.<br>
+col - definierar en kolumn i tabellen. Kan användas för att möjliggöra formatering av hela kolumner istället för enskilda celler.<br>
+colgroup - definierar en grupp av en eller flera kolumner i tabellen, vilket möjliggör formatering av denna.<br> 
+table - definierar hela HTML-tabellen. Den innehåller ett eller flera av elementen <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> 
+och <code>&lt;td&gt;</code>. Mer komplexa tabeller kan innehålla elementen <code>&lt;caption&gt;</code>, <code>&lt;col&gt;</code>, 
+<code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> och <code>&lt;tbody&gt;</code>.<br>
+tbody - används för att gruppera body-innehållet i tabellen. Elementet används tillsammans med <code>&lt;thead&gt;</code>- och <code>&lt;tfoot&gt;</code>-elementen, 
+för att definiera varje del av tabellen.<br>
+td - definierar en standardcell i tabellen.<br>
+tfoot - kan användas för att definiera tabellfoten i tabellen.<br>
+th - definierar en rubrik för en tabellrad, dvs. en rubrikcell.<br>
+thead - kan användas för att definiera tabellhuvudet i tabellen.<br>
+tr - definierar en rad i tabellen. Denna innehåller ett eller flera <code>&lt;th&gt;</code>- och <code>&lt;td&gt;</code>-element.<br>
+Exempel:
+<table>
+<caption>Månadsbudget</caption>
+  <colgroup>
+    <col style="background-color:yellow">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Månad</th>
+      <th>Budget (kr)</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Totalt</td>
+      <td>8300</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Januari</td>
+      <td>3500</td>
+    </tr>
+    <tr>
+      <td>Februari</td>
+      <td>2000</td>
+    </tr>
+	<tr>
+      <td>Mars</td>
+      <td>2800</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3>Bild</h3> 
-img 
+img - definierar en bild på HTML-sidan. Taggen har två obligatoriska attribut; <code>src</code>- och <code>alt</code>.
+Med <code>src</code>-attributet anger man adressen för bilden som ska visas, och med <code>alt</code>-attributet anger
+man en textsträng som ska visas om bilden misslyckas med att laddas in.<br>
+Exempel:
+<img src="warning.png" alt="Varningsymbol" width="42" height="42">
 <h3>Bildkartor</h3> 
-area
-map 
+area - används för att definiera en klickbar yta inuti en bildkarta. Elementet är alltid nästlat inuti en <code>&lt;map&gt;</code>-tagg.<br>
+map - används för att definiera en bildkarta, dvs en bild med klickbara ytor. Elementet behöver innehålla minst ett <code>&lt;area&gt;</code>-element.<br>
+Exempel:
+<img src="sun.png" width="145" height="145" alt="Solen" usemap="#sunmap">
+<map name="sunmap">
+  <area shape="circle" coords="72,72,30" alt="Sun" href="cloud.png">
+</map>
 </body>
 
 </html>
