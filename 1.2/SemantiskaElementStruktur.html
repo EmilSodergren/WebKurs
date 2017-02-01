@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Semantiska element för struktur</title>
+<!-- Patch to make semantic elements work in IE8 and below. -->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<header class="SiteHeader">
+  <img alt="Site logo" src="html5logo.png">
+  <h1 style="display:none">HTML5</h1>
+</header>
+
+<aside class="NavSidebar">
+  <nav id="navelement">
+    <h2><code>&lt;nav&gt;</code></h2>
+	<p>Den här delen används för att definiera en grupp av navigeringslänkar. Länkarna kan peka antingen på ämnen inom den nuvarande sidan eller
+	på andra sidor inom webbsidan. Endast stora och viktiga navigeringssektioner behöver inkluderas i ett nav-element, det behövs alltså inte för en 
+	sidas samtliga länkar.</p>
+	<h3>Semantiska element för struktur</h3>
+    <ul>
+      <li><a href="#articleelement">article</a></li>
+      <li><a href="#navelement">nav</a></li>
+      <li><a href="#headerelement">header</a></li>
+	  <li><a href="#footerelement">footer</a></li>
+	  <li><a href="#sectionelement">section</a></li>
+	  <li><a href="#figureelement">figure och figcaption</a></li>
+	  <li><a href="#asideelement">aside</a></li>
+	  <li><a href="...">details</a></li>
+	  <li><a href="...">summary</a></li>
+    </ul>
+  </nav>
+  
+  <section id="sectionelement">
+    <h2><code>&lt;section&gt;</code></h2>
+    <p>Section-elementet kan användas för en grupp av innehåll som börjar med en rubrik, om det inte är något av övriga semantiska element som passar bättre 
+	att använda. Det kan alltså användas för många olika behov, exempelvis små block av innehåll som visas vid sidan av huvudsidan, eller självstående innehåll som 
+	inte riktigt kan beskrivas som en artikel, tex en produktlista.
+    </p>
+  </section>
+</aside>
+
+<main>
+<article>
+<header class="ArticleHeader">
+<h2>Semantiska element för struktur</h2>
+<h3 id="headerelement"><code>&lt;header&gt;</code> - Den här delen används som en behållare för en sidas inledande innehåll eller en grupp navigeringslänkar.
+Normalt innehåller <code>&lt;header&gt;</code>-elementet en eller flera rubrikelement (<code>&lt;h1&gt;</code>-
+<code>&lt;h6&gt;</code>), en logga eller ikon, och information om författaren av sidan. Det är möjligt att ha flera header-element i ett dokument. Dels kan det 
+användas för att titulera en hel webbsida, och dels kan det användas för att titulera ett visst innehåll på en webbsida. Det sistnämnda kan förekomma en 
+eller flera gånger.</h3>
+</header>
+
+<p id="articleelement"><code>&lt;article&gt;</code> - representerar ett självständigt innehåll, det ska kunna distribueras för sig själv utan innehållet på resten av webbsiten. 
+Det kan till exempel vara en bloggpost eller en nyhetsartikel.</p>
+
+<figure class="Figure">
+  <img src="figure.png" alt="sun" />
+   <figcaption id="figureelement"><code>&lt;figure&gt;</code> - Den här delen kan innehålla en bild som är självständig från texten i dokumentet, men ändå är relaterad till 
+   texten. Det vill säga om man tar bort bilden ska det inte påverka flödet i texten. Innehållet i figure-elementet kan vara tex. en illustration, ett diagram eller 
+   ett fotografi.<br>
+   <code>&lt;figcaption&gt;</code> - Den här delen kan användas för att lägga till en bildtext till figure-elementet. figcaption-elementet kan placeras antingen 
+   först eller sist inom figure-elementet.</figcaption>
+</figure>
+
+<aside class="PullQuote" id="asideelement">
+<img src="quotes_start.png" alt="quote">
+<code>&lt;aside&gt;</code> - Den här delen används för att representera innehåll som är tangentiellt relaterat till texten som omger den, tex ett citat. Den 
+kan också användas för att omge en helt separat sektion på sidan, tex en hel sidpanel som inkluderar ett nav-element och andra element.
+<img src="quotes_end.png" alt="end quote">
+</aside>
+
+</article>
+</main>
+
+<footer class="Footer">
+<p id="footerelement"><code>&lt;footer&gt;</code> - Den här delen definierar en sidfot för ett dokument eller en sektion. Den innehåller normalt information om författaren av sidan,
+copyright, kontaktinformation, sajtkarta, en länk tillbaka till början på sidan, eller relaterade länkar till den aktuella sidan. Det är möjligt att ha fler än ett footer-element på en sida.
+</p>
+</footer>
+</body>
+
+</html>

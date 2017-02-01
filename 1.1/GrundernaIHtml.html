@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 <head>
 <meta charset="UTF-8">
 <title>Grunderna i HTML5</title>
@@ -60,13 +60,14 @@ sidstrkturen kan se ut.
 Med hjälp av de olika meta-taggarna kan man ange metainformation om HTML-dokumentet. Dessa anges alltid inom head-elementet. Informationen visas inte på sidan men kan hittas maskinellt av sökmotorer,
 webbservicar etc. <br>
 meta-taggar med name-attributen: <br>
-author - namnet på dokumentets författare<br>
-description - kortfattad beskrivning av sidans innehåll<br>
-generator - specificerar ett av de mjukvarupaket som används för att bygga webbsidan.<br>
+author - namnet på webbsidans författare<br>
+description - kortfattad beskrivning av webbsidans innehåll<br>
+generator - specificerar ett av de mjukvarupaket som använts för att skapa webbsidan.<br>
 keywords - en kommaseparerad lista med nyckelord som definierar sidan innehåll<br>
-robots - ger möjlighet att förklara för robotar att en sidas innehåll inte ska indexeras eller scannas för länkar att följa.<br>
+robots - ger möjlighet att förklara för robotar (datorprogram som automatiskt söker igenom webben) att en sidas innehåll inte ska indexeras eller scannas för länkar att följa.<br>
 meta-taggar med attributet: <br>
-http-equiv - tillhandahåller en HTTP-rubrik för informationen i content-attributet.
+http-equiv - tillhandahåller en HTTP-rubrik för informationen i content-attributet, dvs informationen i content-attributet tolkas som att den finns i HTTP-huvudet.
+Man kan använda attributvärdet "refresh" för att automatiskt uppdatera webbsidan.<br>
 Ett exempel med de olika metataggarna finns <a href="ExempelMetataggar.html">här (länk)</a>. 
 <h3>Text</h3> 
 <p>abbr - definierar en förkortning eller akronym<br> 
@@ -74,17 +75,17 @@ Exempel:
 <abbr title="Förenta nationerna">FN</abbr> grundades år 1945.</p>
 <p>address - definierar kontaktinformation till författaren eller ägaren av ett dokument eller en artikel. Om elementet finns inuti <code>&lt;body&gt;</code>-elementet<br>
 representerar det kontaktinformation för dokumentet, medan det om det finns inuti ett <code>&lt;article&gt;</code>-element representerar kontaktinformation för artikeln.<br> 
-Exempel:
+Exempel:</p>
 <address>
 Skriven av <a href="mailto:author@example.com">Arne Arnesson</a>.<br> 
 Besök oss på:<br>
 Example.com<br>
 Box 123, STOCKHOLM<br>
 Sverige
-</address></p>
+</address>
 <p>blockquote - specificerar en sektion av text som är tagen från en annan källa<br>
 Exempel:
-<p>Här är ett citat från Livsmedelsverkets webbsida:</p>
+<p>Här är ett citat från Livsmedelsverkets webbsida:
 <blockquote cite="http://www.livsmedelsverket.se">
 Hitta ditt sätt att äta grönare, lagom mycket och röra på dig.
 </blockquote></p>
@@ -93,14 +94,13 @@ Exempel:
 För att separera rader<br>i en text,<br>använd br-elementet.</p>
 <p>cite - definierar titeln på ett verk, tex en bok, film eller tv-serie.<br>
 Exempel:
-<cite>Djungelboken</cite> är en novellsamling som skrevs av Rudyard Kipling.</p></p>
+<cite>Djungelboken</cite> är en novellsamling som skrevs av Rudyard Kipling.</p>
 <p>code - definierar en bit datorkod i en text.<br>
 Exempel: 
 <code>Ett stycke datorkod</code></p>
 <p>dfn - representerar den "definierande instansen" (ofta första användningen) av en term i HTML.<br>
 Exempel: 
 <dfn>HTML</dfn> är det vanligaste märkspråket för att skapa webbsidor.</p>
-</p>
 <p>div - definierar en del eller sektion av ett dokument. Kan användas för att formatera en grupp block-element med CSS.<br>
 Exempel: 
 <div style="color:#AF96FF">
@@ -163,7 +163,7 @@ Exempel:
 Klicka <a href="#start">här</a> för att komma till början på sidan. <br>
 Bild-länk - en bild-länk är en länk där man använder en bild som själva länken.<br>
 Exempel:
-<a href="https://color.adobe.com/"><img src="colorpicker.png"></a><br>
+<a href="https://color.adobe.com/"><img src="colorpicker.png" alt="colorpicker"></a><br>
 Länk till olika protokoll (exempelvis ftp) - det är möjligt att länka till andra protokoll än http, tex ftp. En ftp-länk behöver gå till en absolut adress.<br>
 Exempel:
 En <a href="ftp://[mappens eller filens adress]">ftp-länk</a>.<br>
