@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Ansökningsformulär</title>
+</head>
+
+<body>
+<main>
+<header class="FormHeader">
+<h1>Ansökningsformulär</h1>
+</header>
+<form id="form" method="get" action="https://people.dsv.su.se/~pierre/courses/05_ass/ip2/2/2.2.1/perl/example.cgi">
+<p><i>Fyll i formuläret nedan. Fält markerade med en </i><em>*</em><i> är obligatoriska.</i></p>
+  <fieldset>
+    <legend>Kontaktuppgifter</legend>
+      <label for="name">Namn <em>*</em></label>
+      <input id="name" name="name" type="text" placeholder="Arne Arnesson" pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" title="förnamn efternamn" autofocus required><br>
+      <label for="telephone">Telephone</label>
+      <input id="telephone" name="telephone" type="tel" placeholder="(xxx) xxx-xxxx" title="(xxx) xxx-xxxx"><br>
+      <label for="email">E-post <em>*</em></label>
+      <input id="email" name="email" type="email" placeholder="example@ex.com" required><br>
+	  <label for="password">Lösenord <em>*</em></label>
+      <input id="password" name="password" type="password" pattern=".{8,}" title="minst 8 tecken" required><br>
+  </fieldset>
+    <fieldset>
+    <legend>Personlig information</legend>
+      <label for="birthDate">Födelsedatum och tid<em>*</em></label>
+      <input id="birthDate" name="birthDate" type="datetime-local" required><br>
+      <label for="age">Ålder<em>*</em></label>
+      <input id="age" name="age" type="number" min="0" max="120" step="1" required><br>
+	  <label>Kön</label>
+	   <input type="radio" name="gender" id="male" value="male">
+	    <label for="male">Man</label>
+	   <input type="radio" name="gender" id="female" value="female">
+	   <label for="female">Kvinna</label><br>
+	  <label for="website">Hemsida </label>
+      <input id="website" name="website" type="url" placeholder="www.example.com"><br>
+      <label for="comments">Vilka är dina bästa egenskaper?</label><br>
+      <textarea id="comments" name="comments"></textarea><br>
+	   <label for="language">Språkkunskaper<em>*</em></label>
+	   <input type="text" list="languages" id="language" name="language" required>
+	  <datalist id="languages">
+		<option value="Engelska">
+		<option value="Franska">
+		<option value="Spanska">
+		<option value="Tyska">
+  </datalist>
+  </fieldset>
+  <fieldset>
+    <legend>Välj en eller flera maträtter som du tycker om:</legend>
+    <label for="pizza"><input id="pizza" name="pizza" type="checkbox"> Pizza</label>
+    <label for="lasagne"><input id="lasagne" name="lasagne" type="checkbox"> Lasagne</label>
+    <label for="hamburger"><input id="hamburger" name="hamburger" type="checkbox"> Hamburgare</label>
+    <label for="pasta"><input id="pasta" name="pasta" type="checkbox"> Pastasallad</label>
+    <label for="omelette"><input id="omelette" name="omelette" type="checkbox"> Omelett</label>
+  </fieldset>
+  <fieldset>
+  <legend>Kursinformation</legend>
+  <label for="courseDate">Kursdatum</label>
+  <input type="date" id="courseDate" name="courseDate"><br>
+  <label for="points">Betyg</label>
+  <input type="range" id="points" name="points" min="0" max="10"><br>
+  <label for="month">Månad</label>
+  <input type="month" id="month" name="month"><br>
+  <label for="week">Vecka</label>
+  <input type="week" id="week" name="week"><br>
+  <label for="time">Tidpunkt</label>
+  <input type="time" id="time" name="time"><br>
+  <label for="city">Stad</label>
+  <select id="city" name="city">
+  <optgroup label="Götaland">
+    <option value="malmö">Malmö</option>
+    <option value="göteborg">Göteborg</option>
+  </optgroup>
+  <optgroup label="Svealand">
+    <option value="stockholm">Stockholm</option>
+    <option value="uppsala">Uppsala</option>
+  </optgroup>
+    <optgroup label="Norrland">
+    <option value="umeå">Umeå</option>
+    <option value="luleå">Luleå</option>
+  </optgroup>
+</select><br>
+  </fieldset>
+  <p><input type="submit" value="Skicka ansökan">
+  <input type="reset" value="Återställ">
+  <input type="button" value="Knapp utan funktion">
+  <input type="image" src="image.png" alt="Skicka" width="75" height="35"></p>
+</form>
+</main>
+</body>
+
+</html>

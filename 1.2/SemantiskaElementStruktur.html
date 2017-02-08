@@ -28,8 +28,7 @@
 	  <li><a href="#sectionelement">section</a></li>
 	  <li><a href="#figureelement">figure och figcaption</a></li>
 	  <li><a href="#asideelement">aside</a></li>
-	  <li><a href="...">details</a></li>
-	  <li><a href="...">summary</a></li>
+	  <li><a href="#detailselement">details och summary</a></li>
     </ul>
   </nav>
   
@@ -53,8 +52,17 @@ användas för att titulera en hel webbsida, och dels kan det användas för att
 eller flera gånger.</h3>
 </header>
 
-<p id="articleelement"><code>&lt;article&gt;</code> - representerar ett självständigt innehåll, det ska kunna distribueras för sig själv utan innehållet på resten av webbsiten. 
+<p id="articleelement"><code>&lt;article&gt;</code> - representerar ett självständigt innehåll, det ska kunna distribueras för sig själv utan ytterligare innehåll från resten av webbsiten. 
 Det kan till exempel vara en bloggpost eller en nyhetsartikel.</p>
+
+<details id="detailselement">
+  <summary><code>&lt;details&gt;</code> och <code>&lt;summary&gt;</code></summary>
+  <p><code>&lt;details&gt;</code> - Den här delen innehåller information som användaren kan välja att visa eller dölja. Tanken är alltså att det ska gå att fälla ut och tillbaka sektionen,
+  i nuläget fungerar det i senare versioner av webbläsarna Chrome, Firefox, Safari och Opera. Innehållet visas då bara om attributet "open" är satt. Funktionaliteten stödjs inte ännu i Internet explorer, 
+  utan där visas det fulla innehållet direkt och användaren ges inte någon möjlighet att visa eller dölja det. Vilket innehåll som helst kan placeras inuti denna tagg.</p>
+  <p><code>&lt;summary&gt;</code> - Den här delen används för att ange en synlig rubrik för <code>&lt;details&gt;</code>-taggen. Genom att klicka på rubriken 
+  kan man visa och dölja detaljinnehållet.</p>
+</details>
 
 <figure class="Figure">
   <img src="figure.png" alt="sun" />
@@ -66,10 +74,10 @@ Det kan till exempel vara en bloggpost eller en nyhetsartikel.</p>
 </figure>
 
 <aside class="PullQuote" id="asideelement">
-<img src="quotes_start.png" alt="quote">
+<img src="quote.png" alt="quote">
 <code>&lt;aside&gt;</code> - Den här delen används för att representera innehåll som är tangentiellt relaterat till texten som omger den, tex ett citat. Den 
-kan också användas för att omge en helt separat sektion på sidan, tex en hel sidpanel som inkluderar ett nav-element och andra element.
-<img src="quotes_end.png" alt="end quote">
+kan också användas för att omge en helt separat sektion på sidan, tex en hel sidpanel som inkluderar ett nav-element och andra element (se ovan).
+<img src="quote.png" alt="end quote">
 </aside>
 
 </article>

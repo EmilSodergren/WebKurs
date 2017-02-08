@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Semantiska element för text</title>
+</head>
+
+<body>
+<main>
+<article>
+<header class="ArticleHeader">
+<h2>Semantiska element för text</h2>
+</header>
+<p><code>&lt;mark&gt;</code> - med den här taggen kan man definiera en textsektion som ska markeras upp. Det kan vara användbart om man läser någon annan persons 
+text och vill framhäva vissa delar av texten, eller om man vill flagga vissa nyckelord.<br>
+Exempel:
+Några viktiga semantiska element för text inom HTML5 är <mark><code>mark</code>, <code>time</code> och <code>wbr</code></mark>.</p>
+<p><code>&lt;time&gt;</code> med datetime-attributet - denna tagg används för att markera upp ett datum, em tidpunkt eller ett kombinerat datum med tidpunkt. Det taggas då så att
+det blir möjligt för program som sökmotorer att extrahera och använda sog av för att producera smartare sökresultat. time-elementet har alltså två syften,
+dels att indikera var ett datum- eller tid-värde finns placerat i märkspråket, och dels att tillhandahålla värdet i ett format som olika datorprogram kan hantera. Om man anger
+det dator-läsbara universella datumformatet i datetime-attributet, blir det möjligt att visa datumet på vilket sätt man vill för användaren. <br>
+Exempel:
+Påskafton inträffar i år den <time datetime="2017-04-15">15e april</time>.</p>
+<p><code>&lt;wbr&gt;</code> - med denna tagg kan man specificera var i en text det skulle passa att lägga in en radbrytning. Det kan vara bra att använda om det finns
+ett mycket långt ord där man inte vill att webbläsaren ska dela upp ordet på fel ställe.<br>
+Exempel:
+Undervattensbåts<wbr>eldsläckningsapparaturs<wbr>upphängningskroksfäste är ett väldigt långt ord, som kan behöva delas av med radbrytningar då webbläsarens fönster
+minskas. </p>
+</article>
+</main>
+</body>
+
+</html>
