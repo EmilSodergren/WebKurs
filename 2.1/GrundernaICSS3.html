@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Grunderna i CSS 3</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Grunderna i CSS 3</h1>
+</header>
+<div>
+<h2>Beskrivning av grundläggande begrepp</h2>
+<h3>Externt länkad CSS-fil och dess fördelar</h3> 
+<p>Med en externt länkad CSS-fil menas en separat textfil som innehåller alla CSS-regler. Den innehåller ingen HTML-kod, och filändelsen ska vara .css. 
+För att en webbsida ska använda sig av den externa CSS-filen behöver den kopplas dit, med antingen <code>&lt;link&gt;</code>-taggen eller CSS-direktivet
+<code>@import</code>. Båda teknikerna behandlas likadant av alla nuvarande webbläsare, så det går bra att välja den teknik man föredrar.
+</p>
+<p>Med <code>&lt;link&gt;</code>-taggen skriver man enligt följande för HTML5 (om CSS-filen heter styles.css): </p>
+<p><code>&lt;link rel="stylesheet" href="css/styles.css"&gt;</code></p>
+<p><code>rel="stylesheet"</code> visar vilken typ av länk det är, i det här fallet en stilmall. Med <code>href</code> pekar man ut 
+var den externa CSS-filen finns placerad.</p>
+<p>Om man istället använder <code>@import</code>-direktivet, skriver man enligt följande för HTML5: </p>
+<p><code>&lt;style&gt; <br>
+@import url(css/styles.css);<br>
+&lt;/style&gt;
+</code></p>
+<p><code>@import</code> är en del av CSS-språket och det ser därför något annorlunda än vad det gör i HTML-kod. Länken till CSS-filen anges med hjälp av
+<code>url</code> istället för <code>href</code>, och omsluts av parenteser. 
+</p>
+<p>Det finns fördelar med att använda sig av externa CSS-filer istället för interna (inkluderas i en webbsidas kod). Bland annat medför de att det går
+snabbare att utveckla webbsidor och även att uppdatera dem. Eftersom att det är möjligt att koppla samma externa CSS-fil till varje sida som ingår i 
+en webbsajt, behöver formateringen och eventuella uppdateringar av denna bara göras på ett ställe. En extern CSS_fil gör också att webbsidan laddar 
+snabbare. 
+</p>
+</div>
+<h3>Arv</h3>
+<p>Arv innebär att CSS-egenskaper (med vissa undantag) som appliceras på en tagg även gäller för dess nästlade taggar. Till exempel nästlas alltid en 
+<code>&lt;h1&gt;</code>-tagg inuti <code>&lt;body&gt;</code>-taggen, vilket medför att egenskaper som är satta för <code>&lt;body&gt;</code>-taggen även 
+gäller för <code>&lt;h1&gt;</code>-taggen. Det kan gälla till exempel teckenfärgen eller typsnittet. Arvet gäller genom flera generationer av taggar, dvs. 
+om en <code>&lt;strong&gt;</code>tagg finns inuti <code>&lt;h1&gt;</code>-taggen, ärver även denna formateringen från <code>&lt;body&gt;</code>taggen.
+Arvet fungerar inte bara på taggar, utan på all typ av formatering (<code>class</code>, <code>id</code> etc.).
+</p>
+<p>Det finns några fall där arv inte gäller. Generellt kan man sägga att egenskaper som påverkar placering av element på webbsidan, marginaler, 
+bakgrundsfärg och kantlinjer på element inte ärvs vidare. Det är också vissa taggar där webbläsare använder sin egen formatering, som rubriker 
+(stora och med fetstil) och länkar (blå färg). Om man då definierar teckenstorlek och anger denna på <code>&lt;body&gt;</code>-taggen kommer
+rubrikerna fortfarande att visas så som de definierats av webbläsaren, tex. är <code>&lt;h1&gt;</code>-taggar större än <code>&lt;h2&gt;</code>-taggar.
+Om det uppstår en konflikt mellan olika formateringar, segrar den som är mest specifik. Till exempel om man har angivit en viss teckenstorlek på 
+<code>&lt;body&gt;</code>-taggen och en annan på en <code>&lt;p&gt;</code>-tagg inuti <code>&lt;body&gt;</code>-taggen, kommer paragrafen att få
+den teckenstorlek som är angiven för <code>&lt;p&gt;</code>-taggen.</p>
+<p>Cascade </p>
+<p>Selektorer (tagg-, attribut-, klass-, id- och barn-selektorer) </p>
+<p>Enheter (absoluta: in, cm, mm, pt, pc, px och relativa: em, ex, %) </p>
+<p>Hur ett CSS-dokument är uppbyggt </p>
+
+<h2>Fördjupning</h2>
+<ul>
+<li><a href="..." >Text och listor </a> </li>
+<li><a href="..." > Marginaler kantlinjer och paddning </a> </li>
+<li><a href="..." > Bilder och bakgrunder </a> </li>
+<li><a href="..." > Navigering </a> </li>
+<li><a href="..." > Tabeller och formulär </a> </li>
+<li><a href="..." > Sidlayout </a> </li>
+<li><a href="..." > Anpassning till olika enheter </a> </li>
+</ul>
+</main>
+</body>
+
+</html>
