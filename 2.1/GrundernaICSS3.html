@@ -12,7 +12,7 @@
 </header>
 <div>
 <h2>Beskrivning av grundläggande begrepp</h2>
-<h3>Externt länkad CSS-fil och dess fördelar</h3> 
+<h3 id="externalcss">Externt länkad CSS-fil och dess fördelar</h3> 
 <p>Med en externt länkad CSS-fil menas en separat textfil som innehåller alla CSS-regler. Den innehåller ingen HTML-kod, och filändelsen ska vara .css. 
 För att en webbsida ska använda sig av den externa CSS-filen behöver den kopplas dit, med antingen <code>&lt;link&gt;</code>-taggen eller CSS-direktivet
 <code>@import</code>. Båda teknikerna behandlas likadant av alla nuvarande webbläsare, så det går bra att välja den teknik man föredrar.
@@ -49,14 +49,96 @@ rubrikerna fortfarande att visas så som de definierats av webbläsaren, tex. ä
 Om det uppstår en konflikt mellan olika formateringar, segrar den som är mest specifik. Till exempel om man har angivit en viss teckenstorlek på 
 <code>&lt;body&gt;</code>-taggen och en annan på en <code>&lt;p&gt;</code>-tagg inuti <code>&lt;body&gt;</code>-taggen, kommer paragrafen att få
 den teckenstorlek som är angiven för <code>&lt;p&gt;</code>-taggen.</p>
-<p>Cascade </p>
-<p>Selektorer (tagg-, attribut-, klass-, id- och barn-selektorer) </p>
-<p>Enheter (absoluta: in, cm, mm, pt, pc, px och relativa: em, ex, %) </p>
-<p>Hur ett CSS-dokument är uppbyggt </p>
+<h3>Cascade</h3>
+<p>Cascade är ett antal regler för CSS som styr hur olika formateringar interagerar och vilken formatering som får högst prioritet i de fall där det uppstår en konflikt.
+De avgör alltså vilka formateringsegenskaper som appliceras på ett element, hur det ska hanteras då det förekommer multipla formateringar för en tagg, 
+och hur motsägande CSS-egenskaper för en tagg ska hanteras. Det finns två fall där det kan uppstå en formateringskonflikt. Dels då en och samma egenskap ärvs från flera olika
+"förfäder", och dels då flera formateringar är satta för samma element, tex. om det både finns en class-formatering för en paragraf och en formatering för <code>&lt;p&gt;</code>-taggen.
+</p>
+<p>Om det finns flera olika CSS-egenskaper satta för olika förfäder till ett element, ackumuleras dessa för det aktuella elementet. Till exempel om en viss teckenstorlek är satt för 
+<code>&lt;body&gt;</code>-taggen och en viss teckenfärg är satt för <code>&lt;p&gt;</code>-taggen, får en <code>&lt;strong&gt;</code>-tagg nästlad inuti en paragraf båda dessa egenskaper.
+De ackumuleras tillsammans med eventuella egenskaper som är satta direkt på <code>&lt;strong&gt;</code>-taggen.
+</p>
+<p>Det kan också förekomma att nedärvda egenskaper från olika förfäder säger emot varandra, till exempel om teckenfärgen är satt till blå på <code>&lt;body&gt;</code>-taggen
+och till lila på <code>&lt;p&gt;</code>-taggen. I det fallet gäller att <code>&lt;strong&gt;</code>-taggen i exemplet ovan ärver egenskapen från den närmaste förfadern,
+och alltså skulle texten däri ärva den lila färgen från <code>&lt;p&gt;</code>-taggen. Men, om det dessutom skulle vara en ytterligare teckenfärg satt direkt på <code>&lt;strong&gt;</code>-taggen
+skulle denna teckenfärg segra, eftersom att egenskaper som är direkt satta på en tagg alltid får högre prioritet än nedärvda egenskaper. Det är alltså egenskaperna från den mest specifika 
+formateringen som vinner.
+</p>
+<p>Om det finns flera egenskaper satta för ett och samma element kombineras egenskaperna, så länge det inte uppstår en konflikt. Till exempel om det finns en formatering angiven för <code>&lt;h2&gt;</code>-taggen 
+och en klassformatering för den klass som är satt på en viss <code>&lt;h2&gt;</code>-tagg, appliceras båda dessa formateringar. Andra exempel kan vara om ett element har både en klass- och en id-formatering
+kopplad till sig, eller om det finns en klassformatering och även en gruppselektor där samma klass ingår.
+</p>
+<h3>Selektorer (tagg-, attribut-, klass-, id- och barn-selektorer)</h3>
+<p>Som det nämndes ovan är det vid en formateringskonflikt egenskaper från den formatering som är mest specifik som segrar. Ibland kan det vara svårt att avgöra vilken formatering som är mest specifik.
+Då finns det inom CSS ett sätt att bestämma en formaterings specificitet, baserat på ett värde som är satt för formateringens selektor. Några olika selektorer som kan förekomma är tagg-, 
+attribut-, klass-, id- och barn-selektorer. Dessa beskrivs kortfattat nedan:</p>
+<ul><li>Tagg-selektor - En tagg-selektor appliceras på varje förekomst av en viss tagg i en webbsida, och är därför mycket effektiv. Det går till exempel att formatera alla paragrafer på en sida genom att
+ange en formatering för <code>&lt;p&gt;</code>-taggen. </li>
+<li>Attribut-selektor - En attribut-selektor kan användas för att skilja ut taggar som har en viss egenskap. Till exempel kan man skilja ut alla <code>&lt;img&gt;</code>-taggar
+som har ett <code>title</code>-attribut genom att skriva <code>img[title]</code> i CSS-dokumentet. Attributnamnet ska alltså skrivas inom [...]-tecknen. Det är även möjligt att kombinera 
+attribut-selektorer med klasser, och att selektera ut element som har ett visst värde på attributet. Detta är särskilt användbart då man jobbar med formulär, 
+och till exempel kan vilja komma åt alla textfält via <code>input[type="text"]</code>. Ytterligare möjligheter med attribut-selektorer är att skilja ut element
+som har attribut som börjar, slutar eller innehåller ett visst värde.</li>
+<li>Klass-selektor - En klass-selektor appliceras på en klass. Klass-selektorer är bra att använda om man vill ge en viss formatering till något eller några element, men inte till alla element som finns för 
+en viss tagg. Det är då möjligt att ange en viss klassformatering för <code>.nyhet</code> och sedan endast applicera denna klass på en paragraf som innehåller nyheter. Andra paragrafer påverkas då inte.
+Det är möjligt att applicera en och samma klass på taggar av olika typ, tex. kan en <code>&lt;h2&gt;</code>-tagg och en <code>&lt;p&gt;</code>-tagg få samma klassformatering. I CSS-filen anges en klass-selektor
+med en punkt, tex. <code>.bildtext</code>. För att applicera denna på en <code>&lt;div&gt;</code>-tagg skriver man då: <code>&lt;div class="bildtext"&gt;</code>.</li>
+<li>Id-selektor - Id-selektorer kan användas för att identifiera en unik del av en webbsida, till exempel en banner eller en navigeringspanel. Det finns inte många fördelar med att använda 
+id-selektorer istället för klass-selektorer, men de kan ibland vara användbara i JavaScript-baserade eller väldigt långa webbsidor. I CSS-filen anges id-selektorer med ett fyrkantstecken, tex. <code>#banner</code>.
+För att applicera denna på en <code>&lt;div&gt;</code>-tagg skriver man då: <code>&lt;div id="banner"&gt;</code>.</li>
+<li>Barn-selektor - Med en barn-selektor kan man formatera barn-element till en viss tagg. Relationen mellan de två elementen visas med ett <code>&gt;</code>-tecken, till exempel skriver man 
+<code>body > h1</code> för att komma åt alla <code>&lt;h1&gt;</code>-taggar som är barn till <code>&lt;body&gt;</code>-taggen.</li>
+</ul> 
+<h3 id="units">Enheter (absoluta: in, cm, mm, pt, pc, px och relativa: em, ex, %)</h3>
+<p>Inom CSS finns det flera olika enheter att använda sig av för att definiera längd eller storlek. Det finns två typer av längdenheter; absoluta och relativa. De absoluta längdenheterna är fasta, så en längd som uttrycks med någon av
+dessa kommer att visas i exakt den storleken. De relativa längdenheterna specificerar en längd relativt till en annan längdegenskap. Om man inte känner till utdatamediet är de relativa enheterna att föredra, eftersom att de skalar om 
+bättre mellan olika medier. Absoluta enheter kan användas om utdatamediet är känt, tex. för en utskriftslayout. De olika enheterna beskrivs nedan.</p>
+<ul><li>in - tum, där 1 in = 96 px = 2,54 cm.</li>
+<li>cm - centimeter.</li>
+<li>mm - millimeter.</li>
+<li>pt - punkter, där 1 pt = 1/72 in.</li>
+<li>pc - picas, där 1 pc = 12 pt. </li>
+<li>px - pixlar, dvs. samma enhet som bildskärmens upplösning. </li>
+<li>em - relativt till teckenstorleken för ett element (tex. med 3 em menas 3 gånger det nuvarande typsnittet).</li>
+<li>ex - relativt till x-höjden för det nuvarande typsnittet (används sällan).</li>
+<li>% - procent, relativt till andra element.</li>
+</ul>
+<h3>Hur ett CSS-dokument är uppbyggt </h3>
+<p>Ett CSS-dokument är uppbyggt av ett antal CSS-formateringar för element, dvs. regler som förklarar för webbläsaren hur dess olika element ska formateras. 
+En formatering är uppbyggd av två olika element; elementet som ska formateras (selektor) och själva formateringsinstruktionerna (deklarationsblock). En selektor 
+kan till exempel vara en rubrik eller en paragraf, medan ett deklarationsblock kan göra textfärgen grön eller lägga till en kantlinje runt en paragraf. 
+I CSS-dokumentet skrivs varje formatering på en särskild struktur, exempelvis kan man skriva enligt följande för att formatera en paragraf:</p>
+<p>
+<code>p { color: green; font-size: 2em; }</code>
+</p>
+<p>I det fallet är <code>p</code> selektorn, vilken refererar till <code>&lt;p&gt;</code>-taggen (paragraf). Deklarationsblocket är hakparenteserna inklusive innehållet däri.
+Deklarationsblocket kan brytas ner i deklarationer, där varje deklaration avskiljs med ett semikolon. En deklaration består då av en egenskap och ett värde, vilka separeras med
+ett kolon. I exemplet ovan är <code>color: green;</code> en deklaration, där <code>color</code> motsvarar egenskapen och <code>green</code> motsvarar värdet.
+När det finns flera deklarationer inom ett deklarationsblock kan de skrivas på separata rader för att göra det mer lättläsligt. Exemplet ovan skrivs då enligt;</p>
+<p>
+<code>p { <br>
+color: green; <br>
+font-size: 2em; <br>
+}</code>
+</p>
+<p>
+CSS-dokumentet kan vara antingen internt eller externt, beroende på om informationen finns placerad inom webbsidan eller i en separat fil som länkas till webbsidan. Se <a href="#externalcss">Externt länkad 
+CSS-fil och dess fördelar</a> ovan hur en extern CSS-fil länkas in på en webbsida. För att använda sig av intern CSS-formatering, skrivs den i html-dokumentets huvud 
+<code>&lt;head&gt;</code>-del mellan två <code>&lt;style&gt;</code>-taggar. Det kan då se ut enligt följande;
+</p>
+<p>
+<code>&lt;style&gt;<br>
+p { <br>
+color: green; <br>
+font-size: 2em; <br>
+}<br>
+&lt;style&gt;</code>
+</p>
 
 <h2>Fördjupning</h2>
 <ul>
-<li><a href="..." >Text och listor </a> </li>
+<li><a href="../2.2/TextOchListor.html">Text och listor </a> </li>
 <li><a href="..." > Marginaler kantlinjer och paddning </a> </li>
 <li><a href="..." > Bilder och bakgrunder </a> </li>
 <li><a href="..." > Navigering </a> </li>

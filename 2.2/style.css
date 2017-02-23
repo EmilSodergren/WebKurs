@@ -1,0 +1,23 @@
+h1.bigheader {
+	color: green;
+}
+
+h2.smallerheader {
+	color: #27A0EF;
+}
+
+h3.smallestheader {
+	color: rgb(82,21,237);
+}
+
+p.paragraph {
+	font: 20px Arial;
+}
+
+p.otherparagraph {
+	font: italic bold small-caps 15px/150% Helvetica;
+}
+
+ul.list {
+	list-style: upper-roman inside none; 
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Text och listor</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Text och listor</h1>
+</header>
+<div>
+<h2>Beskrivning av begrepp</h2>
+<h3>Fontfamilj (serif, sans-serif och monospace)</h3> 
+<p>Med en fontfamilj, <code>font-family</code> i css-dokumentet, kan man ange en prioriteringsordning för teckensnittsfamiljer och generiska familjer 
+för ett element. En teckensnittsfamilj är en specifik teckensnittsfamilj (tex. Times New Roman eller Arial) medan en generisk familj är en grupp av 
+teckensnittsfamiljer med liknande utseende (tex. serif eller monospace). Det är rekommenderat att ange flera olika teckensnitt i <code>font-family</code>-egenskapen,
+för att det ska finnas något alternativ som den aktuella webbläsaren har installerat. Om en webbläsare inte stödjer det första alternativet går den vidare till nästa alternativ
+osv. Man börjar med det teckensnitt man vill använda och avslutar med en generisk familj, för att webbläsaren ska välja ett liknande teckensnitt i den generiska 
+familjen ifall ingen av de tidigare teckensnitten finns tillgängliga. Om ett teckensnitt innehåller fler än ett ord ska det omges med citationstecken. Då flera 
+teckensnittsfamiljer anges ska de separeras med kommatecken. Ett exempel på hur fontfamilj kan anges i CSS-dokumentet visas nedan;
+</p>
+<p>
+<code>font-family: "Times New Roman", Times, serif;</code> 
+</p>
+<p>De olika generiska familjerna beskrivs nedan;</p>
+<ul><li>serif - Den här typen av teckensnitt har små linjer på slutet av bokstäverna.Dessa är bra att använda för långa textavsnitt, eftersom att man tror att de små
+"fötterna" på slutet av bokstäverna gör det lättare att läsa från en bokstav till en annan. Exempelvis ingår Times New Roman i den här fontfamiljen.</li>
+<li>sans-serif - Den här fontfamiljen har inga linjer i slutet på bokstäverna. Den används ofta för rubriker. Exempel på teckensnitt som ingår i denna 
+familj är Arial och Helvetica.</li>
+<li>monospace - För teckensnitt inom denna familj har varje bokstav samma bredd. Dessa teckensnitt används ofta för att visa datorkod. Exempel på teckensnitt som 
+ingår här är Courier New och Lucida Console.</li>
+</ul>
+<h3>Enheter</h3>
+<p>Det finns olika enheter för att ange teckenstorleken. Några av dem; nyckelord, procentenheter och em, fungerar så att det antingen läggs till eller dras ifrån från den
+textstorlek som redan finns på användarens bildskärm. Alltså kommer webbläsaren att falla tillbaka på de förinställda inställningarna om ingen textstorlek anges med CSS,
+vilket för de flesta webbläsare är 16 pixlar för ickerubrik-taggar (bastextstorleken). När man formaterar om textstorleken med CSS kommer webbläsaren att utgå från bastextstorleken och justera
+upp eller ner beroende på vilket nyckelord, procentenhet eller em som anges. De tre enheterna beskrivs nedan. Se även <a href="../2.1/GrundernaICSS3.html#units">Enheter</a> för ytterligare 
+information om olika enheter.
+<h4>Nyckelord (xx-small, x-small, small, medium, large, x-large, xx-large)</h4>
+<p>Det finns sju olika nyckelord att använda sig av för att ange textstorleken relativt till bastextstorleken; xx-small, x-small, small, medium, large, x-large, xx-large.
+Medium-alternativet motsvarar webbläsarens bastextstorlek. Övriga nyckelord ökar eller minskar storleken. Eftersom det bara finns sju alternativ är nyckelord ett ganska 
+begränsat sätt för att ange textstorleken. För att ange textstorleken med nyckelord i CSS-dokumentet kan man tex skriva enligt följande;</p>
+<p><code>font-size: small;</code></p>
+<h4>%</h4>
+<p>Procentandelar ger större möjlighet att finjustera textstorleken än vad nyckelord gör. Bastextstorleken motsvarar här 100%, vilket normalt är 16 pixlar. Om man tex vill 
+dubbla storleken för en viss text sätter man den till 200%. För att ange textstorleken i procent i CSS-dokumentet kan man då skriva enligt följande;</p>
+<p><code>font-size: 200%;</code></p>
+<h4>em</h4>
+<p>Denna enhet fungerar på samma sätt som procentandelar gör. 1em motsvarar bastextstorleken, dvs. 16 pixlar i normalfall. För att till exempel halvera textstorleken sätter man den till
+.5em. För att ange detta i CSS-dokumentet skriver man enligt följande;</p>
+<p><code>font-size: .5em;</code></p>
+<h2>Kortfattade beskrivningar av egenskaper, med exempel</h2>
+<h3>Färg</h3>
+<p><code>color</code> - Med denna egenskap kan man ange textfärgen för element. Det är till exempel möjligt att ange färgen med något av HTML:s färgnyckelord (tex. aqua), hexadecimalt (tex. #3E8988), 
+med RGB-metoden (tex. rgb(0,0,255) ). Exempel:</p>
+<h1 class="bigheader">Det här är en rubrik</h1>
+<h2 class="smallerheader">Det här är en mindre rubrik</h2>
+<h3 class="smallestheader">Det här är en ännu mindre rubrik</h3>
+<h3>Teckensnitt</h3>
+<p><code>font</code> - Med denna egenskap kan man ange alla fontegenskaper i en och samma deklaration. De egenkaper som kan anges är (i ordning); "font-style font-variant font-weight font-size/line-height 
+font-family". Två av egenskaperna är obligatoriska, nämligen fontstorlek (font-size) och fontfamilj (font-family). Exempel:</p>
+<p class="paragraph">Det här är en paragraf. Det här är en paragraf. Det här är en paragraf.</p>
+<p class="otherparagraph">Det här är en annan paragraf. Det här är en annan paragraf. Det här är en annan paragraf.</p>
+<h3>Listor</h3>
+<p><code>list-style</code> - Med denna egenskap kan man sätta alla listegenskaper i en och samma deklaration. De egenskaper som kan anges är (i ordning); 
+"list-style-type, list-style-position, list-style-image". Om någon av dessa utelämnas, används defaultvärdet för den egenskapen (om det finns något). Exempel:</p>
+<ul class="list">
+  <li>Ett</li>
+  <li>Två</li>
+  <li>Tre</li>
+  <li>Fyra</li>
+</ul>
+</div>
+</main>
+</body>
+
+</html>
