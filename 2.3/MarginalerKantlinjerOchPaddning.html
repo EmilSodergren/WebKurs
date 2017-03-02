@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Marginaler, kantlinjer och paddning</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Marginaler, kantlinjer och paddning</h1>
+</header>
+<div>
+<h2>Beskrivning av begrepp</h2>
+<h3>Boxmodell (marginal, kantlinje, paddning och innehåll) </h3> 
+<p>Alla HTML-element kan ses som boxar, med någon slags innehåll inuti. Inom CSS använder man termen "boxmodell" för att beskriva innehållet i en tagg, tillsammans
+med paddning, kantlinjer och marginaler. Se bilden nedan.
+<figure class="Figure">
+  <img src="Boxmodell.png" alt="boxmodel" />
+   <figcaption id="figureelement">Bilden visar hur boxmodellen är uppbyggd.</figcaption>
+</figure>
+De olika egenskaperna som utgör boxen beskrivs nedan;
+</p>
+<ul class="list">
+  <li>Innehåll - Innehållet är det som finns inuti en tagg, till exempel text eller en bild.</li>
+  <li>Paddning - Paddningen utgör det utrymme som finns mellan innehållet och innehållets kantlinje. Den är transparent.</li>
+  <li>Kantlinje - Kantlinjen är linjen som finns runt kanterna av boxen, runt innehållet och paddningen. Om man väljer att använda kantlinjer kan man ha dem längs alla sidor,
+en enskild sida eller någon valfri annan kombination av sidor.</li>
+  <li>Marginal - Marginalen är det som separerar en tagg från en annan. Den är transparent.</li>
+</ul>
+<p>Om man ska formatera en viss tagg kan man välja att sätta någon eller alla av dessa egenskaper, tex kan man bara ange en kantlinje. Om man inte själv definierar
+egenskaperna kommer webbläsarens inställningar att gälla. Till exempel brukar då rubriker och paragrafer ha en förinställd topp- och bottenmarginal.
+</p>
+<h2>Kortfattade beskrivningar av egenskaper, med exempel</h2>
+<h3>Marginaler</h3>
+<p><code>margin</code> - Denna egenskap sätter alla fyra marginaler i en och samma deklaration. Om fyra värden anges sätts marginalerna i ordningen topp, höger, botten, vänster. 
+Om bara ett värde anges betyder det att alla marginaler ska ha samma värde. Exempel:</p>
+<p class="margin">En paragraf med olika marginaler.</p>
+<p>En normal paragraf.</p>
+<h3>Kantlinjer</h3>
+<p><code>border</code> - Denna egenskap sätter egenskaper för alla fyra kantlinjer i en och samma deklaration. De egenskaper som kan sättas är (i ordning) 
+<code>border-width</code>, <code>border-style</code> och <code>border-color</code>. Det är möjligt att utelämna något eller några egenskaper. Exempel:</p>
+<p class="border">En paragraf med kantlinjer.</p>
+<p><code>border-color</code> - Denna egenskap sätter färgen på kantlinjerna. Den kan ha mellan ett och fyra värden, för att ange olika färger på alla 
+kantlinjer. Exempel:</p>
+<p class="bordercolor">En paragraf med kantlinjer i olika färg.</p>
+<p><code>border-style</code> - Denna egenskap sätter formateringen på kantlinjerna. Den kan ha mellan ett och fyra värden, för att ange olika formatering på alla 
+kantlinjer. Exempel:</p>
+<p class="borderstyle">En paragraf med formaterade kantlinjer.</p>
+<p><code>border-width</code> - Denna egenskap sätter bredden på kantlinjerna. Den kan ha mellan ett och fyra värden, för att ange olika bredd på alla 
+kantlinjer. Exempel:</p>
+<p class="borderwidth">En paragraf med olika bredd på kantlinjerna.</p>
+<h3>Paddning</h3>
+<p><code>padding</code> - Denna egenskap sätter paddningen på alla fyra sidor i en och samma deklaration. På samma sätt som för marginaler gäller att marginalerna sätts i ordningen topp, höger, 
+botten, vänster om fyra värden anges. Om bara ett värde anges betyder det att alla marginaler ska ha samma värde. Exempel:</p>
+<p class="padding">En paragraf med olika paddning.</p>
+<h3>Outlines</h3>
+<p><code>outline</code> - Denna egenskap kan användas för att ange en linje runt element utanför kantlinjen. På det sättet kan man få elementet att
+"stå ut" mer. Egenskapen sätter alla outline-egenskaper i en och samma deklaration. De egenskaper som kan sättas är (i ordning) <code>outline-color</code>,
+ <code>outline-style</code> och <code>outline-width</code>. Det är möjligt att utelämna något eller några egenskaper. Exempel:</p>
+<p class="outline">En paragraf med outline.</p>
+<h3>Synlighet</h3>
+<p><code>visibility</code> - Denna egenskap specificerar om ett element ska vara synligt eller inte. Exempel:</p>
+<p class="invisible">En osynlig paragraf.</p>
+<p class="visible">En synlig paragraf.</p>
+<p><code>clip-path</code> - Med denna egenskap kan man specificera om endast en viss region av ett element ska visas. OBS. att egenskapen inte stöds i 
+alla webbläsare. Exempel:</p>
+<img class="clippath" src="Clippath.png">
+<p><code>display</code> - Med denna egenskap specificerar man vilken typ av box som ska användas för ett HTML-element. Exempel:</p>
+<p class="inline">Det här är en inline-paragraf.</p>
+<p class="inline">Det här är en annan inline-paragraf.</p>
+<p><code>overflow</code> - Med denna egenskap kan man specificera vad som ska hända om innehållet i ett elements box inte får plats däri. Exempel:</p>
+<div class="overflow">Här används CSS-egenskapen overflow med värdet scroll.</div>
+<h3>Beskriv och exemplifiera även hur man kan få en box...</h3> 
+<p>Som är transparent till en viss grad (se <code>rgba</code> och <code>opacity</code>) - Om man vill göra en box transparent kan man sätta egenskapen
+<code>background-color</code> med RGBA-färgmetoden. Det innebär att man kan göra bakgrunden delvis transparent, och låter då underliggande färger, text och bilder att 
+synas igenom. RGBA-färgvärdet specificeras med rgba(red, green, blue, alpha), där alpha-parametern är ett värde mellan 0.0 (fullt transparent) och 1.0 (ej trasparent).
+En annan möjlighet är att använda CSS-egenskapen <code>opacity</code> för att sätta elementets opacitet. Opacitet 1 är default och innebär att elementet inte 
+är transparent alls. Ett värde på 0.5 betyder 50% transparent medan ett värde på 0 betyder fullständigt transparent. I det här fallet påverkas både texten och 
+bakgrundsfärgen av opacitetsvärdet. Exempel:</p>
+<div class="rgba">Det här elementet har grön rgba-färg med opacitet 0.3.</div>
+<div class="opacity">Det här elementets opacitet är 0.5.</div>
+<p>Som har rundade hörn (se <code>border-radius</code>) - För att få en box med rundade hörn kan man använda egenskapen <code>border-radius</code>. Den sätter egenskapen 
+för alla fyra sidor i en deklaration. Det är möjligt att ange mellan ett och fyra värden beroende på om de olika sidorna ska ha samma värde eller inte. Exempel:</p>
+<div class="borderradius">Här används egenskapen border-radius för att få rundade hörn.</div>
+<p>Som har multippla bakgrundsbilder - Om man vill använda sig av multipla bakgrundsbilder för ett element är detta möjligt med egenskapen <code>background-image</code>. Man anger 
+då de olika bilder man vill använda sig av i en kommaseparerad lista. Exempel:</p>
+<div class="multiplebackground">Här används två olika bakgrundsbilder.</div>
+<p>Som har skuggor (se <code>box-shadow</code>) - Med egenskapen <code>box-shadow</code> är det möjligt att lägga till en eller flera skuggor till ett element. Egenskapen anges med 
+fyra värden (i ordning); horisontell skuggning, vertikal skuggning, radie och skuggfärg. Den horisontella skuggningen kan anges med positivt eller negativt värde, för att bestämma om 
+den ska visas till höger eller vänster. Motsvarande funktionalitet gäller för den vertikala skuggningen, om ett positivt värde anges visas den under elementet medan den om ett negativt 
+värde anges visas ovanför elementet. Radie-värdet bestämmer hur suddig och bred skuggningen ska vara. Ju större värde desto mer suddig och bredare skuggning. Det finns även två valfria
+värden att lägga till <code>box-shadow</code>-egenskapen; <code>inset</code> och <code>spread</code>. Med <code>inset</code> anger man att skuggningen ska visas inuti boxen, medan man med <code>spread</code>
+expanderar skuggningen med ett angivet värde. Det är möjligt att applicera flera skuggningar till ett element, detta görs genom att separera dem med kommatecken. Exempel:</p>
+<div class="boxshadow">Här används egenskapen box-shadow för att skapa skuggning vid elementet.</div>
+<p>Som har gradienter (se <code>linear-gradient</code> och <code>radial-gradient</code>)</p>
+
+</div>
+</main>
+</body>
+
+</html>

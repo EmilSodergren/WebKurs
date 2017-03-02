@@ -11,11 +11,11 @@ h3.smallestheader {
 }
 
 p.paragraph {
-	font: 20px Arial;
+	font: 20px Arial, Helvetica, sans-serif;
 }
 
 p.otherparagraph {
-	font: italic bold small-caps 15px/150% Helvetica;
+	font: italic bold small-caps 15px/150% Times New Roman, Times, serif;
 }
 
 ul.list {

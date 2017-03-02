@@ -1,0 +1,89 @@
+p.margin {
+	margin: 5px 10px 15px 20px;
+}
+
+p.border {
+	border: 5px dashed green;
+}
+
+p.bordercolor {
+	border-style: solid;
+	border-color: blue green purple gray; 
+}
+
+p.borderstyle {
+	border-style: dotted double;
+}
+
+p.borderwidth {
+	border-style: solid;
+	border-width: thin medium 10px ; 
+}
+
+p.padding {
+	padding: 15px 5px 1px 25px;
+}
+
+p.outline {
+	border: red dotted 5px;
+}
+
+p.visible {
+	visibility: visible;
+}
+
+p.invisible {
+	visibility: hidden;
+}
+
+img.clippath {
+	-webkit-clip-path: inset(10px 25px 1px 5px); 
+	-moz-clip-path: inset(10px 25px 1px 5px); 
+	-ms-clip-path: inset(10px 25px 1px 5px); 
+	clip-path: inset(10px 25px 1px 5px); 
+}
+
+p.inline {
+	display: inline;
+}
+
+div.overflow {
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+}
+
+div.opacity {
+    background-color: aqua;
+    opacity: 0.5;
+}
+
+div.rgba {
+    background-color: rgba(0,255,0,0.3);
+}
+
+div.borderradius {
+    border: 2px solid blue;
+    padding: 10px 50px; 
+    background: olive;
+    width: 350px;
+    border-radius: 25px 10px;
+}
+
+div.multiplebackground {
+	background-image: url(Bakgrund1.png), url(Bakgrund2.png);
+	background-position: right center, left top;
+	background-repeat: no-repeat, repeat;
+	padding: 50px;
+	width: 350px;
+}
+
+div.boxshadow {
+	padding: 50px;
+    width: 350px;
+    height: 30px;
+    background-color: yellow;
+	-webkit-box-shadow: 10px 10px 15px gray;
+    box-shadow: 10px 10px 15px gray;
+}
