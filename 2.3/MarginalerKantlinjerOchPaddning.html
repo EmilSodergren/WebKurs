@@ -15,12 +15,12 @@
 <h2>Beskrivning av begrepp</h2>
 <h3>Boxmodell (marginal, kantlinje, paddning och innehåll) </h3> 
 <p>Alla HTML-element kan ses som boxar, med någon slags innehåll inuti. Inom CSS använder man termen "boxmodell" för att beskriva innehållet i en tagg, tillsammans
-med paddning, kantlinjer och marginaler. Se bilden nedan.
+med paddning, kantlinjer och marginaler. Se bilden nedan.</p>
 <figure class="Figure">
   <img src="Boxmodell.png" alt="boxmodel" />
    <figcaption id="figureelement">Bilden visar hur boxmodellen är uppbyggd.</figcaption>
 </figure>
-De olika egenskaperna som utgör boxen beskrivs nedan;
+<p>De olika egenskaperna som utgör boxen beskrivs nedan;
 </p>
 <ul class="list">
   <li>Innehåll - Innehållet är det som finns inuti en tagg, till exempel text eller en bild.</li>
@@ -66,7 +66,7 @@ botten, vänster om fyra värden anges. Om bara ett värde anges betyder det att
 <p class="visible">En synlig paragraf.</p>
 <p><code>clip-path</code> - Med denna egenskap kan man specificera om endast en viss region av ett element ska visas. OBS. att egenskapen inte stöds i 
 alla webbläsare. Exempel:</p>
-<img class="clippath" src="Clippath.png">
+<img class="clippath" src="Clippath.png" alt="clip-path">
 <p><code>display</code> - Med denna egenskap specificerar man vilken typ av box som ska användas för ett HTML-element. Exempel:</p>
 <p class="inline">Det här är en inline-paragraf.</p>
 <p class="inline">Det här är en annan inline-paragraf.</p>
@@ -94,8 +94,14 @@ värde anges visas ovanför elementet. Radie-värdet bestämmer hur suddig och b
 värden att lägga till <code>box-shadow</code>-egenskapen; <code>inset</code> och <code>spread</code>. Med <code>inset</code> anger man att skuggningen ska visas inuti boxen, medan man med <code>spread</code>
 expanderar skuggningen med ett angivet värde. Det är möjligt att applicera flera skuggningar till ett element, detta görs genom att separera dem med kommatecken. Exempel:</p>
 <div class="boxshadow">Här används egenskapen box-shadow för att skapa skuggning vid elementet.</div>
-<p>Som har gradienter (se <code>linear-gradient</code> och <code>radial-gradient</code>)</p>
-
+<p>Som har gradienter (se <code>linear-gradient</code> och <code>radial-gradient</code>) - med CSS3-gradienter kan man skapa mjuka övergångar mellan två eller flera färger.
+Det finns två typer av gradienter; linjära gradienter (med riktning upp, ner, åt höger, åt vänster eller diagonalt), och radiella gradienter (definieras av deras mittpunkt).
+En linjär gradient definieras genom att man sätter elementets bakgrund med egenskapen <code>linear-gradient</code>. Man behöver ange minst två färgstopp, dvs. färger som man vill skapa 
+mjuka övergångar emellan. Det är också möjligt att ange riktning och startpunkt för gradienten. En radiell gradient definieras genom att man sätter elementets bakgrund med egenskapen 
+<code>radial-gradient</code>. Man behöver även där ange minst två färgstopp. Man kan även ange form på gradienten (cirkel, ellips), position för gradientens centrum och gradientens 
+storlek. Exempel:</p>
+<div class="lineargradient">Här används en linjär gradient.</div>
+<div class="radialgradient">Här används en radiell gradient.</div>
 </div>
 </main>
 </body>

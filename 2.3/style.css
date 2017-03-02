@@ -87,3 +87,27 @@ div.boxshadow {
 	-webkit-box-shadow: 10px 10px 15px gray;
     box-shadow: 10px 10px 15px gray;
 }
+
+div.lineargradient {
+	padding: 50px;
+    width: 350px;
+    height: 30px;
+	margin: 10px;
+    background-color: green; 
+    background-image: -webkit-linear-gradient(bottom right, green, lime, green, lime); 
+    background-image: -o-linear-gradient(bottom right, green, lime, green, lime); 
+    background-image: -moz-linear-gradient(bottom right, green, lime, green, lime); 
+    background-image: linear-gradient(bottom right, green, lime, green, lime);
+}
+
+div.radialgradient {
+	padding: 50px;
+    width: 350px;
+    height: 30px;
+	margin: 10px;
+    background-color: aqua;
+	background-image: -webkit-radial-gradient(circle, blue, aqua, yellow);
+	background-image: -o-radial-gradient(circle, blue, aqua, yellow);
+	background-image: -moz-radial-gradient(circle, blue, aqua, yellow);
+    background-image: radial-gradient(circle, blue, aqua, yellow);
+}
