@@ -1,0 +1,117 @@
+a.linkstate:link {
+    color: olive;
+}
+
+a.linkstate:visited {
+    color: lime;
+}
+
+a.linkstate:hover {
+    color: navy;
+}
+
+a.linkstate:active {
+    color: fuchsia;
+}
+
+span.move {
+	cursor: move;
+}
+
+span.pointer {
+	cursor: pointer;
+}
+
+a.button:link {
+	border: solid 1px black;
+	background-color: gray;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+a.button:visited {
+	border: solid 1px black;
+	background-color: wheat;
+	text-decoration: none;
+	color: darkred;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+a.button:hover {
+	border: solid 1px black;
+	background-color: indigo;
+	text-decoration: none;
+	color: lavender;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+a.button:active {
+	border: solid 1px black;
+	background-color: skyblue;
+	text-decoration: none;
+	color: midnightblue;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+a.imagelink:link {
+	border: solid 1px black;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: green;
+	background-image: -webkit-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: -o-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: -moz-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+	}
+	
+a.imagelink:visited {
+	border: solid 1px gray;
+	text-decoration: none;
+	color: gray;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: green;
+	background-image: -webkit-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: -o-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: -moz-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+	}
+	
+a.imagelink:hover {
+	border: solid 1px black;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #3E61BF;
+	background-image: -webkit-linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
+    background-image: -o-linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%);  
+    background-image: -moz-linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
+    background-image: linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
+	}
+	
+a.imagelink:active {
+	border: solid 1px black;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #8C3BCC;
+	background-image: -webkit-linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
+    background-image: -o-linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
+    background-image: -moz-linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
+    background-image: linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
+	}
+	
+	
+
+
+
+

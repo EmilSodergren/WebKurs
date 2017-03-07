@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Navigering</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Navigering</h1>
+</header>
+<div>
+<h2>Beskrivning av begrepp</h2>
+<h3>Länktillstånd </h3> 
+<p>Med länktillstånd menas en länks status på hur webbplatsbesökaren interagerat med denna. Det finns fyra länktillstånd som de flesta webbläsare känner igen;
+en obesökt länk, en länk som redan besökts, en länk som muspekaren placeras över och en länk som klickas på. För var och en av dessa finns det en pseudoklass-selektor
+inom CSS. Det medför att det går att formatera en länk utifrån dess tillstånd.
+</p>
+<h2>Kortfattade beskrivningar av egenskaper, med exempel</h2>
+<h3><code>a:link</code></h3>
+<p>Detta är en vanlig obesökt länk.</p>
+<h3><code>a:active</code></h3>
+<p>Detta är en länk som just klickas på.</p>
+<h3><code>a:visited</code></h3>
+<p>Detta är en länk som besökts av webbplatsbesökaren.</p>
+<h3><code>a:hover</code></h3>
+<p>Detta är en länk där musknappen placeras över den.</p>
+<p>Exempel, där länken formaterats olika beroende på länktillstånd: <b><a class="linkstate" href="../2.1/GrundernaICSS3.html" target="_blank">Grunderna i CSS3</a></b></p>
+<h3><code>cursor</code></h3>
+<p>Denna egenskap kan användas för att specificera vilken typ av markör som ska visas när man pekar på ett element. Exempel: </p>
+<span class="move">Här har markören ändras till "move".</span><br>
+<span class="pointer">Här har markören ändras till "pointer".</span>
+<h2>Stilsättning</h2> 
+<h3>En länk som en knapp (ej formulärknapp, knappen ska göras med enbart en länk och exempelvis background-color och padding i CSS)</h3>
+<p><a class="button" href="https://www.w3schools.com/" target="_blank">W3schools</a></p>
+<h3>En länk med grafik (en bildlänk)</h3>
+<p><a class="imagelink" href="https://validator.w3.org/" target="_blank">HTML-validering</a></p>
+
+ 
+</div>
+</main>
+</body>
+
+</html>
