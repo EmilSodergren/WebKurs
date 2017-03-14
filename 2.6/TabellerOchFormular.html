@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Tabeller och formulär</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Tabeller och formulär</h1>
+</header>
+<div>
+<h2>Kortfattade beskrivningar av egenskaper, med exempel</h2>
+<h3><code>table-layout</code></h3>
+<p>Denna egenskap används för att definiera vilken algoritm webbläsaren ska använda för att presentera tabellrader, celler och kolumner.
+Egenskapen kan sättas till något av följande värden; <code>auto</code>, <code>fixed</code>, <code>initial</code> och
+<code>inherit</code>. Exempel:</p>
+<p>table-layout: auto:</p>
+<table class="auto">
+  <tr>
+    <td class="smallcell">2980000000000000000000000</td>
+    <td class="bigcell">3350000</td>
+  </tr>
+</table>
+
+<p>table-layout: fixed:</p>
+<table class="fixed">
+  <tr>
+    <td class="smallcell">2980000000000000000000000</td>
+    <td class="bigcell">3350000</td>
+  </tr>
+</table>
+<h2>Beskriv och exemplifiera</h2> 
+<h3>Hur man använder CSS med formulär</h3>
+<p>Det finns ett antal HTML-taggar att använda sig av då man skapar ett formulär, tex. fieldset (<code>&lt;fieldset&gt;</code>), legend (<code>&lt;legend&gt;</code>),
+textfält (<code>&lt;input type="text"&gt;</code> etc), knappar (<code>&lt;input type="submit"&gt;</code> etc), dropdown-menyer (skapas med <code>&lt;select&gt;</code>-taggen),
+checkboxar och radioknappar. Vissa av dessa (tex textfält) fungerar bra att formatera med CSS, medan andra fungerar mindre bra att formatera (radioknappar). </p>
+<p>Formulär ser ofta bäst ut om fälten organiseras i kolumner. Ett sätt att åstadkomma detta är att använda en HTML-tabell där beteckningar och formulärfält placeras i varsin 
+kolumn. Ett annat sätt är att använda CSS för att skapa ett formulär med två kolumner, då krävs mindre mängd HTML-kod. Se exempel nedan. Det finns även några grundsteg att följa
+för att underlätta formateringen; att omge varje beteckning med en tagg, att sätta egenskapen <code>display</code> till <code>inline-block</code> för dessa, och slutligen några
+finjusteringar (att för beteckningarna sätta egenskapen <code>vertical-align</code> till <code>top</code>, justera texten till höger och lägga till lite högermarginal). Exempel:
+<div class="formarea">
+  <h3 class="formheader">Ange personinformation</h3> 
+  <form class="subform">
+    <label class="label" for="fname">Förnamn</label>
+    <input type="text" id="fname" name="firstname" placeholder="Ange förnamn..">
+    <label class="label" for="lname">Efternamn</label>
+    <input type="text" id="lname" name="lastname" placeholder="Ange efternamn..">
+	<label class="label" for="title">Titel</label>
+    <input type="text" id="title" name="title" placeholder="Ange titel..">
+    <label class="label" for="city">Stad</label>
+    <select id="city" name="city">
+      <option value="stockholm">Stockholm</option>
+      <option value="goteborg">Göteborg</option>
+      <option value="malmo">Malmö</option>
+    </select>
+    <input type="submit" value="Skicka">
+  </form>
+</div>
+</div>
+</main>
+</body>
+
+</html>

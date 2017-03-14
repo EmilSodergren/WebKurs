@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Sidlayout</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Sidlayout</h1>
+</header>
+<div>
+<h2>Beskrivning av begrepp</h2>
+<h3>Webbsideslayout (fixerad, flytande och elastisk) (fixed, fluid, and elastic)</h3> 
+<p>Tanken med att skapa en webbsideslayout med CSS är att den ska kunna fungera någorlunda bra oberoende av vilken webbläsare och hårdvara (smartphone, läsplatta, stationär dator)
+besökaren av webbplatsen använder. De flesta webbsidesdesigner kan kategoriseras som antingen fixerade eller flytande. En tredje vanligt förekommande variant är elastiska designers. </p> 
+<p>Fixerad layout - Denna layout ger störst kontroll över hur webbsidan kommer att se ut, men för vissa besökare kan det bli svårt att hantera sidan, tex de som använder en 
+väldigt liten skärm. En webbsidas innehåll behåller samma storlek oberoende av webbfönstrets storlek. Ofta centreras innehållet, men det förekommer också att det placeras 
+längs vänsterkanten. Här används pixel-baserade enheter för att definiera sidans dimensioner.</p>
+<p>Flytande layout - Denna layout anpassas efter webbläsarens fönster, genom att växa eller krympa då fönstret blir större respektive mindre. En sådan design kräver större 
+utmaningar vid skapandet av webbsidan, för att den ska se bra ut för alla möjliga skärmstorlekar. Här används procent-baserade enheter för att definiera sidans dimensioner.</p>
+<p>Elastisk layout - Denna design är en kombination av fixerad oh flytande design. Designen anpassar sig efter den textstorlek som besökarens webbläsare har. Här används 
+em-baserade enheter för att definiera sidans dimensioner.</p>
+<h4>Fördelar med att använda CSS istället för tabeller</h4>
+<p>Då webben var nyuppfunnen, var det vanligt att man använde sig av tabeller skapade med taggen <code>&lt;table&gt;</code> för att organisera webbsidors innehåll. Taggen fick dock
+ofta manipuleras på mer eller mindre konstiga sätt, eftersom att den inte är tänkt att användas för layout. Till exempel kunde man placera en tabell inuti en cell hos en annan 
+tabell. Andra nackdelar med den här metoden är också att det adderas en mängd extra HTML-kod, och att den är svår att modifiera i efterhand. Med CSS-design använder man istället
+individuella taggar för det innehåll som man vill placera ut på sidan. Det går då att skapa komplicerade layouter med kolumner och rader genom att gruppera innehållet i olika behållare 
+som man sedan positionerar ut. Innan HTML5 fanns bara <code>&lt;div&gt;</code>-taggen att använda sig av för att uppnå detta, men med HTML5 kom många nya taggar som kan användas
+för att gruppera olika typer av sidinnehåll. Några exempel är <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code> och <code>&lt;footer&gt;</code>.
+</p>
+<h2>Kortfattade beskrivningar av egenskaper, med exempel</h2>
+<h3>Position</h3>
+<h4><code>position</code></h4>
+<p>Denna egenskap används för att definiera typen av positioneringsmetod för ett element. Den kan innehålla något av värdena <code>&lt;static&gt;</code>, <code>&lt;absolute&gt;</code>,
+<code>&lt;relative&gt;</code>, <code>&lt;fixed&gt;</code>, <code>&lt;initial&gt;</code> eller <code>&lt;inherit&gt;</code>.</p>
+<h4><code>top</code></h4>
+<p>För absolut positionerade element sätter denna egenskap toppkanten för ett element till en enhet ovanför eller under toppkanten för dess närmaste förfader. Om elementet inte har
+någon förfader används istället body-elementet, och elementet följer då med vid scrollning av sidan. För relativt positionerade element sätter egenskapen toppkanten för ett element till 
+en enhet ovanför eller under dess normala position. För statiskt positionerade element har egenskapen ingen effekt.</p>
+<h4><code>left</code></h4>
+<p>För absolut positionerade element sätter denna egenskap vänsterkanten för ett element till en enhet till vänster eller höger om vänsterkanten för dess närmaste förfader. Om elementet inte har
+någon förfader används istället body-elementet, och elementet följer då med vid scrollning av sidan. För relativt positionerade element sätter egenskapen vänsterkanten för ett element till 
+en enhet till vänster eller höger om dess normala position. För statiskt positionerade element har egenskapen ingen effekt.</p>
+<h4><code>bottom</code></h4>
+<p>För absolut positionerade element sätter denna egenskap bottenkanten för ett element till en enhet ovanför eller under bottenkanten för dess närmaste förfader. Om elementet inte har
+någon förfader används istället body-elementet, och elementet följer då med vid scrollning av sidan. För relativt positionerade element sätter egenskapen bottenkanten för ett element till 
+en enhet ovanför eller under dess normala position. För statiskt positionerade element har egenskapen ingen effekt.</p>
+<h4><code>right</code></h4>
+<p>För absolut positionerade element sätter denna egenskap högerkanten för ett element till en enhet till vänster eller höger om högerkanten för dess närmaste förfader. Om elementet inte har
+någon förfader används istället body-elementet, och elementet följer då med vid scrollning av sidan. För relativt positionerade element sätter egenskapen högerkanten för ett element till 
+en enhet till vänster eller höger om dess normala position. För statiskt positionerade element har egenskapen ingen effekt.</p>
+<h4><code>z-index</code></h4>
+<p>Denna egenskap används för att definiera stapelordning för ett element. Ett element som har högre z-index än ett annat hamnar alltid framför det andra elementet. Egenskapen kan bara användas
+på element som är positionerade, med något av värdena absolute, relative eller fixed.</p>
+<h4><code>float</code></h4>
+<p>Denna egenskap används för att specificera om ett box-element ska flyta. Element placerade efter ett sådant element kommer att flöda runt det. För att undvika detta kan man använda egenskapen 
+<code>clear</code> (se nedan). </p>
+<h4><code>clear</code></h4>
+<p>Denna egenskap används för att specificera på vilka sidor av ett element som flytande element inte ska kunna flöda.</p>
+<h3>Storlek</h3>
+<h4><code>width</code></h4>
+<p>Denna egenskap används för att definiera bredden på ett element.</p>
+<h4><code>height</code></h4>
+<p>Denna egenskap används för att definiera höjden på att element.</p>
+<h4><code>max-width</code></h4>
+<p>Denna egenskap används för att definiera den maximala bredden för ett element. Det förhindrar att värdet på <code>width</code>-egenskapen blir större än den maxbredd som satts.</p>
+<h4><code>max-height</code></h4>
+<p>Denna egenskap används för att definiera den maximala höjden för ett element. Det förhindrar att värdet på <code>height</code>-egenskapen blir större än den maxhöjd som satts.</p>
+<h4><code>min-width</code></h4>
+<p>Denna egenskap används för att definiera den minimala bredden för ett element. Det förhindrar att värdet på <code>width</code>-egenskapen blir mindre än den minbredd som satts.</p>
+<h4><code>min-height</code></h4>
+<p>Denna egenskap används för att definiera den minimala höjden för ett element. Det förhindrar att värdet på <code>height</code>-egenskapen blir mindre än den minhöjd som satts.</p>
+<h4><code>vertical-align</code></h4>
+<p>Denna egenskap används för att definiera den vertikala justeringen av ett element.</p>
+
+<h3>Exempel</h3>
+<h4>Tre webbsideslayouter (tre separata HTML-dokument med var sin CSS-fil), en fixerad, en flytande och en elastisk, som var och en har: 
+Överst: ett rubrikområde 
+Mellan: tre kolumner där mellankolumnen är störst 
+Längst ner: ett fotområde 
+Om användaren väljer att förstora webbsidan så ska alla inbördes proportioner bibehållas.</h4>
+<ul>
+<li><a href="FixeradLayout.html">Fixerad layout</a> </li>
+<li><a href="FlytandeLayout.html" >Flytande layout</a> </li>
+<li><a href="ElastiskLayout.html" >Elastisk layout</a> </li>
+</ul>
+<h4>En webbsida där man låter texten flöda mellan flera kolumner (se column-count och column-width)</h4>
+<ul>
+<li><a href="MultikolumnLayout.html">Multikolumn layout</a> </li>
+</ul>
+</div>
+</main>
+</body>
+
+</html>

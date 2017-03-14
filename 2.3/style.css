@@ -97,7 +97,7 @@ div.lineargradient {
     background-image: -webkit-linear-gradient(bottom right, green, lime, green, lime); 
     background-image: -o-linear-gradient(bottom right, green, lime, green, lime); 
     background-image: -moz-linear-gradient(bottom right, green, lime, green, lime); 
-    background-image: linear-gradient(bottom right, green, lime, green, lime);
+    background-image: linear-gradient(to bottom right, green, lime, green, lime);
 }
 
 div.radialgradient {

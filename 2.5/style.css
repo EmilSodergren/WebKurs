@@ -68,7 +68,7 @@ a.imagelink:link {
 	background-image: -webkit-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
     background-image: -o-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
     background-image: -moz-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
-    background-image: linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: linear-gradient(to top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
 	}
 	
 a.imagelink:visited {
@@ -81,7 +81,7 @@ a.imagelink:visited {
 	background-image: -webkit-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
     background-image: -o-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
     background-image: -moz-linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
-    background-image: linear-gradient(top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
+    background-image: linear-gradient(to top, lime 0%, green 50%, darkgreen 50%, darkolivegreen 100%); 
 	}
 	
 a.imagelink:hover {
@@ -94,7 +94,7 @@ a.imagelink:hover {
 	background-image: -webkit-linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
     background-image: -o-linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%);  
     background-image: -moz-linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
-    background-image: linear-gradient(top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
+    background-image: linear-gradient(to top, #3E61BF 0%, #29417F 50%, #5381FF 50%, #152040 100%); 
 	}
 	
 a.imagelink:active {
@@ -107,7 +107,7 @@ a.imagelink:active {
 	background-image: -webkit-linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
     background-image: -o-linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
     background-image: -moz-linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
-    background-image: linear-gradient(top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
+    background-image: linear-gradient(to top, #8C3BCC 0%, #CB74E8 50%, #F98CFF 50%, #E84BBF 100%); 
 	}
 	
 	
