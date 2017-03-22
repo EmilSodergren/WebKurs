@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Anpassning till olika enheter</title>
+</head>
+
+<body>
+<main>
+<header class="Header">
+<h1>Anpassning till olika enheter</h1>
+</header>
+<div>
+<h2>Exempel</h2>
+<h3>En webbsida som stilsätts på olika sätt beroende på vilken typ av enhet den visas på (stationär, mobil, skrivare)</h3>
+<p><a href="ResponsivWebbsida.html">Responsiv webbsida</a></p>
+
+<h2>Beskrivningar av CSS-konstruktioner för skrivare, med exempel</h2>
+<h3>Sidbaserad regel</h3>
+<h4><code>@page</code></h4>
+<p>Denna regel används för att modifiera vissa CSS-egenskaper för en sida vid utskrift; en såkallad sidbox med ändlig höjd och bredd definieras. Dimensionerna 
+för en sidbox definieras med <code>size</code>-egenskapen. Med <code>margin</code>-egenskapen definieras området som omger sidboxen. Exempel:</p>
+<p><code>@page {<br>
+    margin: 2cm;  <br>
+}
+</code><p/>
+<h3>Sidbaserade egenskaper</h3>
+<h4><code>page-break-after</code></h4>
+<p>Den här egenskapen används för att ange att en sidbrytning ska läggas in efter ett visst element. Exempel (vid utskrift ska en sidbryning alltid läggas
+till efter ett <code>img</code>-element):</p>
+<p><code>@media print {<br>
+    img {page-break-after: always;}<br>
+}
+</code><p/>
+<h4><code>page-break-before</code></h4>
+<p>Den här egenskapen används för att ange att en sidbrytning ska läggas in före ett visst element. Exempel (vid utskrift ska en sidbryning alltid läggas
+till före ett <code>h2</code>-element):</p>
+<p><code>@media print {<br>
+    h2 {page-break-before: always;}<br>
+}
+</code><p/>
+<h4><code>page-break-inside</code></h4>
+<p>Den här egenskapen används för att ange om en sidbrytning är tillåten inom ett visst element. Exempel (vid utskrift är en sidbryning inte tillåten
+inom ett <code>ul</code>-element):</p>
+<p><code>@media print {<br>
+    ul {page-break-inside: avoid;}<br>
+}
+</code><p/>
+<h4><code>size</code></h4>
+<p>Den här egenskapen används för att ange storlek och sidorientering för en sidbox. Exempel:</p>
+<p><code>@page {<br>
+	size: A4 landscape;<br>
+} 
+</code><p/>
+<h4><code>orphans</code></h4>
+<p>Den här egenskapen används för att ange det minsta antalet rader för ett block-element som måste lämnas i slutet av en sida. Exempel:</p>
+<p><code>div {<br>
+    orphans: 3;<br>
+}
+</code><p/>
+<h4><code>widows</code></h4>
+<p>Den här egenskapen används då en paragraf delas upp på två sidor, för att ange det minsta antalet rader som måste lämnas på toppen av den andra sidan. 
+Exempel:</p>
+<p><code>div {<br>
+    widiws: 2;<br>
+}
+</code><p/>
+
+<h2>Exempel</h2>
+<h3>En webbsida med en stilsättning av något HTML-element som stilsätts olika beroende på storlek och orientering på enhetens fönster</h3>
+</div>
+</main>
+</body>
+
+</html>

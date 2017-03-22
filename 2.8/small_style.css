@@ -1,0 +1,15 @@
+.header h1 {
+	font-size: 1.8em;	
+}
+
+.firstSidebar {
+    float: none;
+    width: auto;
+  }
+  
+.main {
+  float: none;
+  width: auto;
+  border-left: none;
+  border-bottom: dotted 1px rgb(153,153,153);
+}

@@ -1,0 +1,66 @@
+table {
+    width: 100%;
+    border: 1px solid black;
+} 
+
+td {
+    border: 1px solid black;
+}
+
+td.smallcell {
+	width: 10%;
+}
+
+td.bigcell {
+	width: 90%;
+}
+
+table.auto {
+    table-layout: auto;
+}
+
+table.fixed {
+    table-layout: fixed;
+}
+
+.formarea {
+	font: 95% Arial, Helvetica, sans-serif;
+	background-color: #0A8296;
+	width: 350px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+
+.formheader {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.label {
+	display: inline-block;
+	width: 100px;
+	vertical-align: top;
+	text-align: right;
+	margin-right: 15px;
+	font-weight: bold;
+}
+
+input[type="text"], select {
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+input[type="submit"] {
+	display: block;
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-top: 15px;
+	background: #D8F2F1;
+	border: none;
+}
+
+input[type="submit"]:hover {
+	background: #A1B4B4;
+}

@@ -1,0 +1,18 @@
+.header, .footer {
+	background-color: white;
+	border: solid 1px rgb(153,153,153);
+}
+
+.header h1 {
+	color: black;
+}
+
+.main {
+  float: none;
+  width: auto;
+  border-left: none;
+}
+
+.firstSidebar {
+    display: none;
+  }
