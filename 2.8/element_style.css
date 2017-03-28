@@ -35,7 +35,7 @@ table {
 }
 
 .header {
-	background-color: #4E151B;
+	background-color: #403A4E;
 	padding: 20px;
 }
 
@@ -47,7 +47,7 @@ table {
 }
 
 .footer {
-	background-color: #9B7377;
+	background-color: #A999CE;
 	padding: 20px 30px;
 	font-size: 0.75em;
 	clear: both;
@@ -66,4 +66,26 @@ table {
 h2 {
 	font-size: 1.2em;
 	margin-top: 20px;	
+}
+
+.responsiveElement {
+	border: solid;
+	border-color: #825FD6;
+	padding: 10px;
+}
+
+@media (min-width: 320px) 
+  and (max-width: 480px) 
+  and (orientation: landscape) {
+	.responsiveElement {
+		background-color: #A999CE;
+	}
+}
+
+@media (max-width: 480px) 
+  and (orientation: portrait) {
+	.responsiveElement {
+		background-color: #403A4E;
+		color: white;
+	}
 }
