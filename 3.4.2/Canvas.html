@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Bildhantering</title>
+<script src="../jquery-3.2.0.min.js"></script>
+<script src="script_canvas.js"></script>
+</head>
+
+<body>
+<main>
+<header class="header">
+<h1 id="firstHeader">Bildhantering</h1>
+<h2 id="secondHeader">En introduktion till dynamisk grafik med HTML5-elementet <code>canvas</code></h2>
+</header> 
+<div id="content">
+<img src="Bakgrund9.png" id="arrow" alt="arrow" hidden="hidden">
+<img src="Bakgrund10.png" id="star" alt="star" hidden="hidden">
+<canvas id="drawingCanvas" width="700" height="400">
+</canvas>
+<p><button id="save">Spara bild</button></p>
+<div id="saveCanvasArea">
+<p>Högerklicka på bilden nedan för att spara...</p>
+<img src="#" id ="saveCanvas" alt = "spara bild"/>
+</div>
+</div>
+</main>
+</body>
+</html>
