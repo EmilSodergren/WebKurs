@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Formulärhantering</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css" />
+<script src="../scripts/jquery-3.2.0.min.js"></script>
+<script src="../scripts/jquery-ui.min.js"></script>
+<script src="../scripts/jquery.validate.min.js"></script>
+<script src="../scripts/additional-methods.min.js"></script>
+<script src="script.js"></script>
+</head>
+
+<body>
+<main>
+<header class="header">
+<h1 id="firstHeader">Formulärhantering</h1>
+<h2 id="secondHeader">En introduktion till formulärhantering med JavaScript och jQuery</h2>
+</header> 
+<div id="content">
+<h3>En rubrik</h3>
+<div id="tabbedPanel">
+<form name="personForm" id="personForm" method="post">
+<p><i>Fyll i formuläret nedan. Fält markerade med en </i><em>*</em><i> är obligatoriska.</i></p>
+<div>
+<label class="label" for="firstname">Förnamn <em>*</em></label>
+<input type="text" id="firstname" name="firstname" placeholder="Ange förnamn.." title="Ange ditt förnamn">
+</div>
+<div>
+<label class="label" for="lastname">Efternamn <em>*</em></label>
+<input type="text" id="lastname" name="lastname" placeholder="Ange efternamn.." title="Ange ditt efternamn">
+</div>
+<div>
+<label class="label" for="title">Titel</label>
+<input type="text" id="title" name="title" placeholder="Ange titel..">
+</div>
+<div>
+<label class="label" for="telephone">Telefonnummer</label>
+<input type="tel" id="telephone" name="telephone" placeholder="Ange telefonnumer.." title="Ange ditt telefonnumer på formatet xxx-xxxx eller xxxxxxx">
+</div>
+<div>
+<label class="label" for="email">E-post <em>*</em></label>
+<input type="email" id="email" name="email" placeholder="Ange e-post.." title="Ange din epostadress på formatet exempel@abc.se">
+</div>
+ <div id="meals" class="radio">
+<p class="label">Antal måltider</p>
+<input type="radio" id="none" name="meals" checked="checked">
+<label for="none">0</label>
+<input type="radio" id="one" name="meals">
+<label for="one">1</label>
+<input type="radio" id="two" name="meals">
+<label for="two">2</label>
+</div>
+ <div id="specialfood" class="radio" hidden>
+<p class="label">Specialkost</p>
+<input type="radio" id="yes" name="specialfood">
+<label for="yes">Ja</label>
+<input type="radio" id="no" name="specialfood" checked="checked">
+<label for="no">Nej</label>
+</div>
+ <div id="food" hidden>
+<p class="label">Ange specialkost</p>
+<input type="checkbox" id="veg" name="veg">
+<label for="veg">Vegetarisk</label>
+<input type="checkbox" id="lactose" name="lactose">
+<label for="lactose">Laktosfri</label>
+<input type="checkbox" id="gluten" name="gluten">
+<label for="gluten">Glutenfri</label>
+<input type="checkbox" id="vegan" name="vegan">
+<label for="vegan">Vegansk</label>
+</div>
+<div>
+<input type="submit" value="Skicka">
+</div>
+
+</form>
+</div>
+
+</div>
+</main>
+</body>
+</html>

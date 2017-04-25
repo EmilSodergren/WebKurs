@@ -1,7 +1,15 @@
-//Programmet använder jQuery för att implementera
-//att alla externa länkar ska öppnas i ett nytt fönster.
+//Programmet använder jQuery-pluginet jQueryUI för att 
+//implementera tabbade paneler och tooltips.
 
 $(document).ready(function() {
-	$('a[href^="http://"], a[href^="https://"]').attr('target', '_blank');
+	$('#tabbedPanel').tabs({
+		heightStyle: 'auto',
+		show: 'slideDown',
+		hide: 'slideUp'
+	});
+	
+	$('[title]').tooltip({
+		track: true
+	});
 
 });
