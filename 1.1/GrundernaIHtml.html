@@ -50,30 +50,30 @@ Dokumentets innehåll..<br>
 
 <h2>Beskrivning av taggar, med exempel</h2>
 <h3>Struktur</h3>
-body - inkluderar ett HTML-dokuments synliga innehåll.<br>
-head - inkluderar metainformation om HTML-dokumentet.<br>
-html - HTML-dokumentets rotelement, som inkluderar head- och body-sektionen.<br>
-title - anger titeln för HTML-dokumentet.<br> 
+<code>body</code> - inkluderar ett HTML-dokuments synliga innehåll.<br>
+<code>head</code> - inkluderar metainformation om HTML-dokumentet.<br>
+<code>html</code> - HTML-dokumentets rotelement, som inkluderar head- och body-sektionen.<br>
+<code>title</code> - anger titeln för HTML-dokumentet.<br> 
 Ett enkelt exempel på ett HTML-dokument som innehåller dessa delar finns <a href="ExempelStruktur.html">här (länk)</a>. Se även "Hur ett HTML-dokument är uppbyggt" hur
 sidstrkturen kan se ut.
 <h3>Metainformation</h3> 
 Med hjälp av de olika meta-taggarna kan man ange metainformation om HTML-dokumentet. Dessa anges alltid inom head-elementet. Informationen visas inte på sidan men kan hittas maskinellt av sökmotorer,
 webbservicar etc. <br>
 meta-taggar med name-attributen: <br>
-author - namnet på webbsidans författare<br>
-description - kortfattad beskrivning av webbsidans innehåll<br>
-generator - specificerar ett av de mjukvarupaket som använts för att skapa webbsidan.<br>
-keywords - en kommaseparerad lista med nyckelord som definierar sidan innehåll<br>
-robots - ger möjlighet att förklara för robotar (datorprogram som automatiskt söker igenom webben) att en sidas innehåll inte ska indexeras eller scannas för länkar att följa.<br>
+<code>author</code> - namnet på webbsidans författare<br>
+<code>description</code> - kortfattad beskrivning av webbsidans innehåll<br>
+<code>generator</code> - specificerar ett av de mjukvarupaket som använts för att skapa webbsidan.<br>
+<code>keywords</code> - en kommaseparerad lista med nyckelord som definierar sidan innehåll<br>
+<code>robots</code> - ger möjlighet att förklara för robotar (datorprogram som automatiskt söker igenom webben) att en sidas innehåll inte ska indexeras eller scannas för länkar att följa.<br>
 meta-taggar med attributet: <br>
-http-equiv - tillhandahåller en HTTP-rubrik för informationen i content-attributet, dvs informationen i content-attributet tolkas som att den finns i HTTP-huvudet.
+<code>http-equiv</code> - tillhandahåller en HTTP-rubrik för informationen i content-attributet, dvs informationen i content-attributet tolkas som att den finns i HTTP-huvudet.
 Man kan använda attributvärdet "refresh" för att automatiskt uppdatera webbsidan.<br>
 Ett exempel med de olika metataggarna finns <a href="ExempelMetataggar.html">här (länk)</a>. 
 <h3>Text</h3> 
-<p>abbr - definierar en förkortning eller akronym<br> 
+<p><code>abbr</code> - definierar en förkortning eller akronym<br> 
 Exempel: 
 <abbr title="Förenta nationerna">FN</abbr> grundades år 1945.</p>
-<p>address - definierar kontaktinformation till författaren eller ägaren av ett dokument eller en artikel. Om elementet finns inuti <code>&lt;body&gt;</code>-elementet<br>
+<p><code>address</code> - definierar kontaktinformation till författaren eller ägaren av ett dokument eller en artikel. Om elementet finns inuti <code>&lt;body&gt;</code>-elementet<br>
 representerar det kontaktinformation för dokumentet, medan det om det finns inuti ett <code>&lt;article&gt;</code>-element representerar kontaktinformation för artikeln.<br> 
 Exempel:</p>
 <address>
@@ -83,33 +83,33 @@ Example.com<br>
 Box 123, STOCKHOLM<br>
 Sverige
 </address>
-<p>blockquote - specificerar en sektion av text som är tagen från en annan källa<br>
+<p><code>blockquote</code> - specificerar en sektion av text som är tagen från en annan källa<br>
 Exempel:
 Här är ett citat från Livsmedelsverkets webbsida:</p>
 <blockquote cite="http://www.livsmedelsverket.se">
 Hitta ditt sätt att äta grönare, lagom mycket och röra på dig.
 </blockquote>
-<p>br - lägger till en radbrytning i texten. Taggen används utan sluttagg.<br>
+<p><code>br</code> - lägger till en radbrytning i texten. Taggen används utan sluttagg.<br>
 Exempel:
 För att separera rader<br>i en text,<br>använd br-elementet.</p>
-<p>cite - definierar titeln på ett verk, tex en bok, film eller tv-serie.<br>
+<p><code>cite</code> - definierar titeln på ett verk, tex en bok, film eller tv-serie.<br>
 Exempel:
 <cite>Djungelboken</cite> är en novellsamling som skrevs av Rudyard Kipling.</p>
-<p>code - definierar en bit datorkod i en text.<br>
+<p><code>code</code> - definierar en bit datorkod i en text.<br>
 Exempel: 
 <code>Ett stycke datorkod</code></p>
-<p>dfn - representerar den "definierande instansen" (ofta första användningen) av en term i HTML.<br>
+<p><code>dfn</code> - representerar den "definierande instansen" (ofta första användningen) av en term i HTML.<br>
 Exempel: 
 <dfn>HTML</dfn> är det vanligaste märkspråket för att skapa webbsidor.</p>
-<p>div - definierar en del eller sektion av ett dokument. Kan användas för att formatera en grupp block-element med CSS.<br>
+<p><code>div</code> - definierar en del eller sektion av ett dokument. Kan användas för att formatera en grupp block-element med CSS.<br>
 Exempel: </p>
-<div style="color:#AF96FF">
+<div>
   <p>Det här är en textrad i ett div-element.</p>
 </div>
-<p>em - används för att visa betonad text.<br>
+<p><code>em</code> - används för att visa betonad text.<br>
 Exempel:
 <em>Betonad text</em></p>
-<p>h1, h2, h3, h4, h5, h6 - används för att definera HTML-rubriker, där h1 används för den mest relevanta rubriken medan h6 används för den minst relevanta rubriken.<br>
+<p><code>h1, h2, h3, h4, h5, h6</code> - används för att definera HTML-rubriker, där h1 används för den mest relevanta rubriken medan h6 används för den minst relevanta rubriken.<br>
 Exempel:</p>
 <h1>Rubrik 1</h1>
 <h2>Rubrik 2</h2>
@@ -117,38 +117,38 @@ Exempel:</p>
 <h4>Rubrik 4</h4>
 <h5>Rubrik 5</h5>
 <h6>Rubrik 6</h6> 
-<p>kbd - definierar inmatning från tangentbordet<br>
+<p><code>kbd</code> - definierar inmatning från tangentbordet<br>
 Exempel:
 <kbd>Inmatning från tangentbordet</kbd></p>
-<p>p - definierar en paragraf. Webbläsare lägger automatiskt till lite extra marginal före och efter en paragraf (kan modifieras med CSS).<br>
+<p><code>p</code> - definierar en paragraf. Webbläsare lägger automatiskt till lite extra marginal före och efter en paragraf (kan modifieras med CSS).<br>
 Exempel:</p>
 <p>Första paragrafen.</p>
 <p>Andra paragrafen.</p>
-<p>pre - definierar preformaterad text, som tex ska behålla radbrytningar och extra mellanslag.<br>
+<p><code>pre</code> - definierar preformaterad text, som tex ska behålla radbrytningar och extra mellanslag.<br>
 Exempel:</p>
 <pre>
 Den här texten    står i ett
 pre element
 </pre>
-<p>q - definierar en kort citering. Webbläsare lägger normalt till citationstecken runt citeringen.<br>
+<p><code>q</code> - definierar en kort citering. Webbläsare lägger normalt till citationstecken runt citeringen.<br>
 Exempel:
 Organisationens mål är att: 
 <q>Bygga en hållbar framtid.</q>
 </p>
-<p>samp - definierar utdata från ett datorprogram.<br>
+<p><code>samp</code> - definierar utdata från ett datorprogram.<br>
 Exempel:
 <samp>Utdata från ett datorprogram</samp></p>
-<p>span - används för att gruppera "inline"-element i ett dokument. Taggen medför ingen visuell ändring i sig själv, men kan modifieras med CSS.<br>
+<p><code>span</code> - används för att gruppera "inline"-element i ett dokument. Taggen medför ingen visuell ändring i sig själv, men kan modifieras med CSS.<br>
 Exempel:
-Himlen är <span style="color:blue;font-weight:bold">blå</span> och gräset är <span style="color:darkolivegreen;font-weight:bold">grönt</span>.
+Himlen är <span>blå</span> och gräset är <span>grönt</span>.
 </p>
-<p>strong - definierar viktig text. <br>
+<p><code>strong</code> - definierar viktig text. <br>
 Exempel:
 <strong>Viktig text</strong></p>
-<p>var - definierar en variabel.<br>
+<p><code>var</code> - definierar en variabel.<br>
 Exempel:
 <var>En variabel</var></p>
-<h3>Hypertext, a</h3>
+<h3>Hypertext, <code>a</code></h3>
 Denna tagg används för att definiera en hyperlänk, vilken används för att länka en webbsida till en annan.
 Det finns olika typer av länkar: <br>
 Relativ länk - en relativ länk utgår från den sida man befinner sig på och används vanligtvis för länkar inom den egna webbsidan<br>
@@ -165,14 +165,14 @@ Exempel:
 <a href="https://color.adobe.com/"><img src="colorpicker.png" alt="colorpicker"></a><br>
 Länk till olika protokoll (exempelvis ftp) - det är möjligt att länka till andra protokoll än http, tex ftp. En ftp-länk behöver gå till en absolut adress.<br>
 Exempel:
-En <a href="ftp://[mappens eller filens adress]">ftp-länk</a>.<br>
+En <a href="ftp://ftp.hp.com">ftp-länk</a>.<br>
 Mailto-länk - detta är en länk som innehåller en epostadress. Då man klickar på länken öppnas datorns epostprogram med den aktuella epostadressen förifylld i "Till"-fältet.<br>
 Exempel:
 Det här är en epostlänk: <a href="mailto:ansa3634@student.su.se?Subject=Hej" target="_top">Skicka mail</a> 
 <h3>Oordnad, ordnad och beskriven lista</h3> 
-dl - definierar en beskriven lista. Taggen används i kombination med dt- och dd-taggar (se nedan).<br> 
-dt - definierar termer eller namn som finns i en beskriven lista.<br>
-dd - beskriver varje term eller namn i en beskriven lista.<br>
+<code>dl</code> - definierar en beskriven lista. Taggen används i kombination med dt- och dd-taggar (se nedan).<br> 
+<code>dt</code> - definierar termer eller namn som finns i en beskriven lista.<br>
+<code>dd</code> - beskriver varje term eller namn i en beskriven lista.<br>
 Exempel:<br>
 <dl>
   <dt>Te</dt>
@@ -180,7 +180,7 @@ Exempel:<br>
   <dt>Mjölk</dt>
   <dd>En kall dryck</dd>
 </dl><br>
-ol - definierar en ordnad lista. Den ordnade listan kan antingen vara numerisk eller alfabetisk. Det är möjligt att nästla 
+<code>ol</code> - definierar en ordnad lista. Den ordnade listan kan antingen vara numerisk eller alfabetisk. Det är möjligt att nästla 
 ordnade listor. Listobjekt definieras med <code>&lt;li&gt;</code>-taggen (se nedan).<br>
 Exempel:
 <ol>
@@ -188,7 +188,7 @@ Exempel:
   <li>Päron</li>
   <li>Banan</li>
 </ol><br>
-ul - definierar en oordnad lista. Varje ny rad markeras med en punkt, där punkttypen kan ändras med ett "type"-attribut.
+<code>ul</code> - definierar en oordnad lista. Varje ny rad markeras med en punkt, där punkttypen kan ändras med ett "type"-attribut.
 Listobjekt definieras med <code>&lt;li&gt;</code>-taggen (se nedan).<br>
 Exempel:
 <ul>
@@ -196,27 +196,27 @@ Exempel:
   <li>Päron</li>
   <li>Banan</li>
 </ul><br>
-li - definierar ett listobjekt i en ordnad eller oordnad lista (se de två exemplen ovan).
+<code>li</code> - definierar ett listobjekt i en ordnad eller oordnad lista (se de två exemplen ovan).
 <h3>Tabell</h3> 
-caption - förklarande text om tabellen som står överst, direkt efter <code>&lt;table&gt;</code>-taggen.<br>
-col - definierar en kolumn i tabellen. Kan användas för att möjliggöra formatering av hela kolumner istället för enskilda celler.<br>
-colgroup - definierar en grupp av en eller flera kolumner i tabellen, vilket möjliggör formatering av denna.<br> 
-table - definierar hela HTML-tabellen. Den innehåller ett eller flera av elementen <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> 
+<code>caption</code> - förklarande text om tabellen som står överst, direkt efter <code>&lt;table&gt;</code>-taggen.<br>
+<code>col</code> - definierar en kolumn i tabellen. Kan användas för att möjliggöra formatering av hela kolumner istället för enskilda celler.<br>
+<code>colgroup</code> - definierar en grupp av en eller flera kolumner i tabellen, vilket möjliggör formatering av denna.<br> 
+<code>table</code> - definierar hela HTML-tabellen. Den innehåller ett eller flera av elementen <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> 
 och <code>&lt;td&gt;</code>. Mer komplexa tabeller kan innehålla elementen <code>&lt;caption&gt;</code>, <code>&lt;col&gt;</code>, 
 <code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> och <code>&lt;tbody&gt;</code>.<br>
-tbody - används för att gruppera body-innehållet i tabellen. Elementet används tillsammans med <code>&lt;thead&gt;</code>- och <code>&lt;tfoot&gt;</code>-elementen, 
+<code>tbody</code> - används för att gruppera body-innehållet i tabellen. Elementet används tillsammans med <code>&lt;thead&gt;</code>- och <code>&lt;tfoot&gt;</code>-elementen, 
 för att definiera varje del av tabellen.<br>
-td - definierar en standardcell i tabellen.<br>
-tfoot - kan användas för att definiera tabellfoten i tabellen.<br>
-th - definierar en rubrik för en tabellrad, dvs. en rubrikcell.<br>
-thead - kan användas för att definiera tabellhuvudet i tabellen.<br>
-tr - definierar en rad i tabellen. Denna innehåller ett eller flera <code>&lt;th&gt;</code>- och <code>&lt;td&gt;</code>-element.<br>
+<code>td</code> - definierar en standardcell i tabellen.<br>
+<code>tfoot</code> - kan användas för att definiera tabellfoten i tabellen.<br>
+<code>th</code> - definierar en rubrik för en tabellrad, dvs. en rubrikcell.<br>
+<code>thead</code> - kan användas för att definiera tabellhuvudet i tabellen.<br>
+<code>tr</code> - definierar en rad i tabellen. Denna innehåller ett eller flera <code>&lt;th&gt;</code>- och <code>&lt;td&gt;</code>-element.<br>
 Exempel:
 <table>
 <caption>Månadsbudget</caption>
   <colgroup>
-    <col style="background-color:yellow">
-	<col style="background-color:green">
+    <col>
+	<col>
   </colgroup>
   <thead>
     <tr>
@@ -224,12 +224,6 @@ Exempel:
       <th>Budget (kr)</th>
     </tr>
   </thead>
-  <tfoot>
-    <tr>
-      <td>Totalt</td>
-      <td>8300</td>
-    </tr>
-  </tfoot>
   <tbody>
     <tr>
       <td>Januari</td>
@@ -244,17 +238,24 @@ Exempel:
       <td>2800</td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <td>Totalt</td>
+      <td>8300</td>
+    </tr>
+  </tfoot>
+ 
 </table>
 
 <h3>Bild</h3> 
-img - definierar en bild på HTML-sidan. Taggen har två obligatoriska attribut; <code>src</code>- och <code>alt</code>.
+<code>img</code> - definierar en bild på HTML-sidan. Taggen har två obligatoriska attribut; <code>src</code>- och <code>alt</code>.
 Med <code>src</code>-attributet anger man adressen för bilden som ska visas, och med <code>alt</code>-attributet anger
 man en textsträng som ska visas om bilden misslyckas med att laddas in.<br>
 Exempel:
 <img src="warning.png" alt="Varningsymbol" width="42" height="42">
 <h3>Bildkartor</h3> 
-area - används för att definiera en klickbar yta inuti en bildkarta. Elementet är alltid nästlat inuti en <code>&lt;map&gt;</code>-tagg.<br>
-map - används för att definiera en bildkarta, dvs en bild med klickbara ytor. Elementet behöver innehålla minst ett <code>&lt;area&gt;</code>-element.<br>
+<code>area</code> - används för att definiera en klickbar yta inuti en bildkarta. Elementet är alltid nästlat inuti en <code>&lt;map&gt;</code>-tagg.<br>
+<code>map</code> - används för att definiera en bildkarta, dvs en bild med klickbara ytor. Elementet behöver innehålla minst ett <code>&lt;area&gt;</code>-element.<br>
 Exempel:
 <img src="sun.png" width="145" height="145" alt="Solen" usemap="#sunmap">
 <map name="sunmap">

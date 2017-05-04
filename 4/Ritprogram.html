@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Ritprogram</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="../scripts/jquery-3.2.0.min.js"></script>
+<script src="../scripts/jquery-ui.min.js"></script>
+<script src="script.js"></script>
+</head>
+
+<body>
+<div class="pageWrapper">
+<header class="header">
+<h1 id="firstHeader">Ritprogram</h1>
+</header> 
+<div class="contentWrapper">
+<div class="toolBarWrapper">
+<div id="colorToolBar" class="toolBar">
+Färg<br>
+<img id="black" class="color" src="black.png" alt="svart" onclick="changeColor('rgb(0,0,0)', this)">
+<img id="gray" class="color" src="gray.png" alt="grå" onclick="changeColor('rgb(127,127,127)', this)">
+<img id="orange" class="color" src="orange.png" alt="orange" onclick="changeColor('rgb(255,127,39)', this)">
+<img id="red" class="color" src="red.png" alt="röd" onclick="changeColor('rgb(212,21,29)', this)">
+<img id="pink" class="color" src="pink.png" alt="rosa" onclick="changeColor('rgb(255,174,201)', this)">
+<img id="purple" class="color" src="purple.png" alt="lila" onclick="changeColor('rgb(163,73,164)', this)">
+<img id="blue" class="color" src="blue.png" alt="blå" onclick="changeColor('rgb(63,72,204)', this)">
+<img id="turquoise" class="color" src="turquoise.png" alt="turkos" onclick="changeColor('rgb(0,162,232)', this)">
+<img id="green" class="color" src="green.png" alt="grön" onclick="changeColor('rgb(34,177,76)', this)">
+<img id="lime" class="color" src="lime.png" alt="lime" onclick="changeColor('rgb(181,230,29)', this)">
+<img id="yellow" class="color" src="yellow.png" alt="gul" onclick="changeColor('rgb(255,242,0)', this)">
+</div>
+<div id="thicknessToolBar" class="toolBar">
+Tjocklek<br>
+<form action="#">
+ <select name="thickness" id="thickness" onchange="changeThickness()">
+      <option value="1">1px</option>
+      <option value="2">2px</option>
+      <option value="3">3px</option>
+      <option value="4">4px</option>
+      <option value="5">5px</option>
+      <option value="6">6px</option>
+      <option value="7">7px</option>
+      <option value="8">8px</option>
+      <option value="9">9px</option>
+      <option value="10">10px</option>
+      <option value="11">11px</option>
+      <option value="12">12px</option>
+      <option value="13">13px</option>
+      <option value="14">14px</option>
+      <option value="15">15px</option>
+      <option value="16">16px</option>
+      <option value="17">17px</option>
+      <option value="18">18px</option>
+      <option value="19">19px</option>
+	  <option value="20">20px</option>
+ </select>
+</form>
+</div>
+<div id="colorToolBar" class="toolBar">
+Sudd<br>
+<img id="erase" class="color" src="erase.png" alt="sudd" onclick="eraseDraw()">
+</div>
+</div>
+<div id="canvasWrapper">
+<canvas id="drawingCanvas" width="800" height="500">
+</canvas>
+</div>
+<div id="buttonParagraph" class="toolBar"><button class="ui-button ui-widget ui-corner-all" id="save">Spara bild</button>
+<button class="ui-button ui-widget ui-corner-all" id="clear">Rensa bild</button></div>
+<div id="saveCanvasArea">
+<p>Högerklicka på bilden nedan för att spara...</p>
+<img src="#" id ="saveCanvas" alt = "spara bild"/>
+</div>
+</div>
+<footer class="footer">
+<p>En sidfot</p>
+<p>Kontakt: <a href="mailto:epost@abcde.se">epost@abcde.se</a></p>
+</footer>
+</div>
+</body>
+</html>
