@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <title>Ritprogram</title>
 <link rel="stylesheet" href="../css/jquery-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/small_style.css" media="(max-width:480px)">
+<link rel="stylesheet" href="css/print_style.css" media="print">
 <script src="../scripts/jquery-3.2.0.min.js"></script>
 <script src="../scripts/jquery-ui.min.js"></script>
-<script src="script.js"></script>
+<script src="scripts/script.js"></script>
 </head>
 
 <body>
@@ -19,21 +21,21 @@
 <div class="toolBarWrapper">
 <div id="colorToolBar" class="toolBar">
 Färg<br>
-<img id="black" class="color" src="black.png" alt="svart" onclick="changeColor('rgb(0,0,0)', this)">
-<img id="gray" class="color" src="gray.png" alt="grå" onclick="changeColor('rgb(127,127,127)', this)">
-<img id="orange" class="color" src="orange.png" alt="orange" onclick="changeColor('rgb(255,127,39)', this)">
-<img id="red" class="color" src="red.png" alt="röd" onclick="changeColor('rgb(212,21,29)', this)">
-<img id="pink" class="color" src="pink.png" alt="rosa" onclick="changeColor('rgb(255,174,201)', this)">
-<img id="purple" class="color" src="purple.png" alt="lila" onclick="changeColor('rgb(163,73,164)', this)">
-<img id="blue" class="color" src="blue.png" alt="blå" onclick="changeColor('rgb(63,72,204)', this)">
-<img id="turquoise" class="color" src="turquoise.png" alt="turkos" onclick="changeColor('rgb(0,162,232)', this)">
-<img id="green" class="color" src="green.png" alt="grön" onclick="changeColor('rgb(34,177,76)', this)">
-<img id="lime" class="color" src="lime.png" alt="lime" onclick="changeColor('rgb(181,230,29)', this)">
-<img id="yellow" class="color" src="yellow.png" alt="gul" onclick="changeColor('rgb(255,242,0)', this)">
+<img id="black" class="color" src="images/black.png" alt="svart" title="svart" onclick="changeColor('rgb(0,0,0)', this)">
+<img id="gray" class="color" src="images/gray.png" alt="grå" title="grå" onclick="changeColor('rgb(127,127,127)', this)">
+<img id="orange" class="color" src="images/orange.png" alt="orange" title="orange" onclick="changeColor('rgb(255,127,39)', this)">
+<img id="red" class="color" src="images/red.png" alt="röd" title="röd" onclick="changeColor('rgb(212,21,29)', this)">
+<img id="pink" class="color" src="images/pink.png" alt="rosa" title="rosa" onclick="changeColor('rgb(255,174,201)', this)">
+<img id="purple" class="color" src="images/purple.png" alt="lila" title="lila" onclick="changeColor('rgb(163,73,164)', this)">
+<img id="blue" class="color" src="images/blue.png" alt="blå" title="blå" onclick="changeColor('rgb(63,72,204)', this)">
+<img id="turquoise" class="color" src="images/turquoise.png" alt="turkos" title="turkos" onclick="changeColor('rgb(0,162,232)', this)">
+<img id="green" class="color" src="images/green.png" alt="grön" title="grön" onclick="changeColor('rgb(34,177,76)', this)">
+<img id="lime" class="color" src="images/lime.png" alt="lime" title="lime" onclick="changeColor('rgb(181,230,29)', this)">
+<img id="yellow" class="color" src="images/yellow.png" alt="gul" title="gul" onclick="changeColor('rgb(255,242,0)', this)">
 </div>
 <div id="thicknessToolBar" class="toolBar">
 Tjocklek<br>
-<form action="#">
+<form action="#" title="tjocklek">
  <select name="thickness" id="thickness" onchange="changeThickness()">
       <option value="1">1px</option>
       <option value="2">2px</option>
@@ -58,9 +60,9 @@ Tjocklek<br>
  </select>
 </form>
 </div>
-<div id="colorToolBar" class="toolBar">
+<div id="eraseToolBar" class="toolBar">
 Sudd<br>
-<img id="erase" class="color" src="erase.png" alt="sudd" onclick="eraseDraw()">
+<img id="erase" class="color" src="images/erase.png" alt="sudd" title="sudd" onclick="eraser(this)">
 </div>
 </div>
 <div id="canvasWrapper">

@@ -35,11 +35,18 @@ table {
 /* end reset browser styles */
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Helvetica, sans-serif;
 }
 
 .header {
 	background-color: #3E134E;
+	/* background: #cb60b3; */
+	background: -moz-radial-gradient(center, ellipse cover, #cb60b3 0%, #c146a1 27%, #a80077 57%, #3e134e 83%, #3e134e 100%);
+	/* background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #cb60b3), color-stop(27%, #c146a1), color-stop(57%, #a80077), color-stop(83%, #3e134e), color-stop(100%, #3e134e)); */
+	background: -webkit-radial-gradient(center, ellipse cover, #cb60b3 0%, #c146a1 27%, #a80077 57%, #3e134e 83%, #3e134e 100%);
+	background: -o-radial-gradient(center, ellipse cover, #cb60b3 0%, #c146a1 27%, #a80077 57%, #3e134e 83%, #3e134e 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #cb60b3 0%, #c146a1 27%, #a80077 57%, #3e134e 83%, #3e134e 100%);
+	background: radial-gradient(ellipse at center, #cb60b3 0%, #c146a1 27%, #a80077 57%, #3e134e 83%, #3e134e 100%);
 	padding: 20px;
 	margin-bottom: 10px;
 }
@@ -59,9 +66,21 @@ body {
 	margin-top: 10px;
 }
 
-.footer a {
-	color: black;	
+.footer a:link {
+	color: #4D484E;	
 	font-weight: bold;
+}
+
+/* .footer a:visited {
+    color: lime;
+} */
+
+.footer a:hover {
+    color: #C9BDCE;
+}
+
+.footer a:active {
+    color: #D603A4;
 }
 
 .contentWrapper {
@@ -72,6 +91,12 @@ body {
 #drawingCanvas {
 	 border: 2px solid black;
 	 margin: 10px;
+}
+
+#canvasWrapper{
+    display: block;
+    width: 800px;
+    height: 500px;
 }
 
 .toolBar {
@@ -94,6 +119,10 @@ body {
 
 #canvasWrapper {
 	clear: both;
+}
+
+#buttonParagraph {
+	margin-top: 20px;
 }
 
 .color {
