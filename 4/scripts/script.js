@@ -10,9 +10,19 @@ var context;
 var previousColorElement;
 var previousThicknessElement;
 var previousEraseElement;
+var previousToolElement;
 
 $(document).ready(function() {
 	$('#saveCanvasArea').hide();
+	
+	// Visa rätt spara-knapp beroende på webbläsare
+	if (navigator.userAgent.match(/msie|trident/i) || (navigator.userAgent.indexOf("Edge") > -1)) {
+          $('#save').hide();
+    }
+	else {
+		$('#saveIe').hide();
+	}
+	
 	canvas = document.getElementById("drawingCanvas"); 
 	context = canvas.getContext("2d");
 	//context.lineWidth = 5;
@@ -61,24 +71,196 @@ $(document).ready(function() {
 		isDrawing = false;
 	}
 	
-	// Rensa bilden
+		// Rensa bilden
 	$('#clear').click(function(){
 		context.clearRect(0, 0, canvas.width, canvas.height);
 	});
 	
 	// Events som behövs för att rita
-	canvas.onmousedown = startDrawing;
-	canvas.onmouseup = stopDrawing;
-	canvas.onmouseout = stopDrawing;
-	canvas.onmousemove = draw;
+	$('#pen').click(function(){
+		context.globalAlpha = 1;
+		canvas.onmousedown = startDrawing;
+		canvas.onmouseup = stopDrawing;
+		canvas.onmouseout = stopDrawing;
+		canvas.onmousemove = draw;
+		
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// krita
+	var crayonTexture = new Image();
+	crayonTexture.src = 'images/crayon.png';
+	$('#crayon').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// hjärta
+	var heartTexture = new Image();
+	heartTexture.src = 'images/heart.png';
+	$('#heart').click(function(){
+		pattern(this);
+		//context.globalAlpha = 0.4;
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// stjärna
+	var starTexture = new Image();
+	starTexture.src = 'images/star.png';
+	$('#star').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// cirkel
+	var circleTexture = new Image();
+	circleTexture.src = 'images/circle.png';
+	$('#circle').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// moln
+	var cloudTexture = new Image();
+	cloudTexture.src = 'images/cloud.png';
+	$('#cloud').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// fyrkant
+	var squareTexture = new Image();
+	squareTexture.src = 'images/square.png';
+	$('#square').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});	
+	
+	// triangel
+	var triangleTexture = new Image();
+	triangleTexture.src = 'images/triangle.png';
+	$('#triangle').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});
+	
+	// pil
+	var arrowTexture = new Image();
+	arrowTexture.src = 'images/arrow.png';
+	$('#arrow').click(function(){
+		pattern(this);
+		$(this).removeClass("tool").addClass("selected");
+		if (previousToolElement != null) {
+			previousToolElement.className = "tool";
+		}
+		previousToolElement = this;
+	});
+	
+	// Generell funktion för mönster
+	function pattern(patternElement) {
+		//context.globalAlpha = 0.4;
+		//canvas.addEventListener("mousedown", drawImage);
+		canvas.onmousedown = startDrawImage;
+		canvas.onmouseup = stopDrawing;
+		canvas.onmouseout = stopDrawing;
+		canvas.onmousemove = drawImage;	
+	}
+	
+	// Börja rita bilder
+	function startDrawImage() {
+		isDrawing = true;
+		drawImage;
+	}
+	
+	// Rita bilder
+	function drawImage(e){
+	 if (isDrawing) {
+		var loc, imageSize;      // declare the variables you will use
+		if(previousToolElement.complete){    // check that the images has finished loading
+        // get the location of the mouse on the canvas
+        loc = windowToCanvas(canvas, e.clientX, e.clientY); 
+		var rect = canvas.getBoundingClientRect();
+			 context.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+		
+        //imageSize = randRange(5,40);      // get the size to draw the image
+        loc.x -= previousToolElement.width/2;             // we want the image to be centered on the mouse
+        loc.y -= previousToolElement.height/2;             // so offset the image by half the draw size
+        // now draw the image
+        context.drawImage(previousToolElement,                  // the image to draw
+                  0,0,previousToolElement.width,previousToolElement.height, // what part of the image to draw
+                                                    // in this case all of the image
+                  loc.x,loc.y,previousToolElement.width,previousToolElement.height   // where and how big it should be on the canvas
+			);
+		}
+	 }
+	}
+	
+	function windowToCanvas(canvas, x, y){
 
-	// Spara bilden
-	$('#save').click(function(){
+        var rect = canvas.getBoundingClientRect();
+        return {x: x - rect.left * (canvas.width/rect.width),
+                y: y - rect.top * (canvas.height/rect.height)
+               }
+       }
+	   
+	//function randRange (min, max) {
+    //    return Math.floor(Math.random() * (max - min + 1)) + min;
+    //}
+
+
+
+	// Spara bilden - Internet explorer
+	$('#saveIe').click(function(){
 		var url = canvas.toDataURL("image/png");
 		var canvasCopy = document.getElementById("saveCanvas");
 		canvasCopy.src = url;
 		$('#saveCanvasArea').show();
 	});	
+	
+	// Spara bilden - övriga browsers
+	$('#save').click(function(){
+		var url = canvas.toDataURL("image/png");
+		this.href = url;
+	});	
+	
+	// Spara v2
+	/* var button = document.getElementById("btn-download");
+	button.addEventListener('click', function (e) {
+    var dataURL = canvas.toDataURL("image/png");
+    button.href = dataURL;
+	}); */
 	
 	// Byt penntjocklek
 	$(function() {
@@ -88,6 +270,8 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+
 	
 	// Ändra storlek på canvas
    /*  var canvasJquery = $('#drawingCanvas');
@@ -127,12 +311,19 @@ $(document).ready(function() {
 
 // Byt färg
 function changeColor(color, imageElement) {
+	if (!($('#pen').hasClass("selected"))) {
+		alert("Markera pennan för att rita med vald färg");
+	}
+	
 	context.globalCompositeOperation = "source-over";
 	context.strokeStyle = color;
 	imageElement.className = "selected";
 		
 	if (previousColorElement != null) {
 		previousColorElement.className = "color";
+	}
+	else if (previousColorElement == null) {
+		$('#black').removeClass("selected").addClass("color");
 	}
 	previousColorElement = imageElement;
 	
@@ -154,10 +345,40 @@ function eraser(eraseElement){
 	if (previousColorElement != null) {
 		previousColorElement.className = "color";
 	}
+	else if (previousColorElement == null) {
+		$('#black').removeClass("selected").addClass("color");
+	}
 	previousEraseElement = eraseElement;
+}
+
+// Fyll canvas
+function fillCanvas() {
+	if (confirm("Vill du verkligen fylla hela canvasen med vald färg? OBS: allt du ritat tidigare försvinner") == true) {
+        // Start a new path to begin drawing in a new color.
+		context.closePath();
+		context.beginPath();
+		context.globalAlpha = 1;
+		context.fillStyle = context.strokeStyle;
+		context.fillRect(0, 0, canvas.width, canvas.height);
+    } 
+	//else {
+    //}   
 }
 
 // Tooltips för element med title-attributet
  $(function() {
     $(document).tooltip();
  });
+ 
+
+ 
+ 
+ // Status:
+ //Spara fungerar inte då man använt mönster (IE-varianten fungerar)
+ //Behöver lägga till fler mönster -generell funktion?
+ //Behöver fixa responsivt för högermenyn -flexbox
+ //Behöver fixa "markering" av fyll
+
+
+ 
+ 

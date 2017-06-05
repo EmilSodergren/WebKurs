@@ -21,12 +21,13 @@
 <div class="toolBarWrapper">
 <div id="colorToolBar" class="toolBar">
 Färg<br>
-<img id="black" class="color" src="images/black.png" alt="svart" title="svart" onclick="changeColor('rgb(0,0,0)', this)">
+<img id="black" class="selected" src="images/black.png" alt="svart" title="svart" onclick="changeColor('rgb(0,0,0)', this)">
 <img id="gray" class="color" src="images/gray.png" alt="grå" title="grå" onclick="changeColor('rgb(127,127,127)', this)">
 <img id="orange" class="color" src="images/orange.png" alt="orange" title="orange" onclick="changeColor('rgb(255,127,39)', this)">
 <img id="red" class="color" src="images/red.png" alt="röd" title="röd" onclick="changeColor('rgb(212,21,29)', this)">
 <img id="pink" class="color" src="images/pink.png" alt="rosa" title="rosa" onclick="changeColor('rgb(255,174,201)', this)">
 <img id="purple" class="color" src="images/purple.png" alt="lila" title="lila" onclick="changeColor('rgb(163,73,164)', this)">
+<img id="lavender" class="color" src="images/lavender.png" alt="lavendel" title="lavendel" onclick="changeColor('rgb(200,191,231)', this)">
 <img id="blue" class="color" src="images/blue.png" alt="blå" title="blå" onclick="changeColor('rgb(63,72,204)', this)">
 <img id="turquoise" class="color" src="images/turquoise.png" alt="turkos" title="turkos" onclick="changeColor('rgb(0,162,232)', this)">
 <img id="green" class="color" src="images/green.png" alt="grön" title="grön" onclick="changeColor('rgb(34,177,76)', this)">
@@ -60,16 +61,35 @@ Tjocklek<br>
  </select>
 </form>
 </div>
-<div id="eraseToolBar" class="toolBar">
+<!-- <div id="eraseToolBar" class="toolBar">
 Sudd<br>
 <img id="erase" class="color" src="images/erase.png" alt="sudd" title="sudd" onclick="eraser(this)">
+</div> -->
 </div>
-</div>
+<div id="main">
 <div id="canvasWrapper">
 <canvas id="drawingCanvas" width="800" height="500">
 </canvas>
 </div>
-<div id="buttonParagraph" class="toolBar"><button class="ui-button ui-widget ui-corner-all" id="save">Spara bild</button>
+<div id="verticalToolBar" class="toolBar">
+<span class="toolbarHeadline">Verktyg</span>
+<img id="pen" class="tool" src="images/pen.png" alt="pen" title="penna">
+<img id="fill" class="tool" src="images/fill.png" alt="fill" title="fyll" onclick="fillCanvas()">
+<img id="erase" class="tool" src="images/erase.png" alt="sudd" title="sudd" onclick="eraser(this)"><br>
+<span class="toolbarHeadline">Mönster</span>
+<img id="crayon" class="tool" src="images/crayon.png" alt="crayon" title="krita">
+<img id="heart" class="tool" src="images/heart.png" alt="heart" title="hjärta">
+<img id="star" class="tool" src="images/star.png" alt="star" title="stjärna">
+<img id="circle" class="tool" src="images/circle.png" alt="circle" title="cirkel">
+<img id="cloud" class="tool" src="images/cloud.png" alt="cloud" title="moln">
+<img id="square" class="tool" src="images/square.png" alt="square" title="fyrkant">
+<img id="triangle" class="tool" src="images/triangle.png" alt="triangle" title="triangel">
+<img id="arrow" class="tool" src="images/arrow.png" alt="arrow" title="pil">
+</div>
+</div>
+<div id="buttonWrapper" class="toolBar">
+<button class="ui-button ui-widget ui-corner-all" id="saveIe">Spara bild</button>
+<a href="#" class="ui-button ui-widget ui-corner-all" id="save" download="my-file-name.png">Spara bild</a>
 <button class="ui-button ui-widget ui-corner-all" id="clear">Rensa bild</button></div>
 <div id="saveCanvasArea">
 <p>Högerklicka på bilden nedan för att spara...</p>

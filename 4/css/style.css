@@ -97,6 +97,12 @@ body {
     display: block;
     width: 800px;
     height: 500px;
+	float: left;
+}
+
+#main {
+	clear: both;
+	width: 900px;
 }
 
 .toolBar {
@@ -113,22 +119,51 @@ body {
 	height: inherit;
 }
 
+.toolBar button {
+	font-family: 'Trebuchet MS';
+	font-size: 14px;	
+	font-variant: small-caps;
+	text-align: center;
+}
+
 .toolBarWrapper {
 	height: 74px;
 }
 
-#canvasWrapper {
+#verticalToolBar {
+	width: 74px;
+	height: 495px;
+	float: right;
+	margin: 10px 0 0 25px;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+}
+
+#buttonWrapper {
+	margin-top: 20px;
 	clear: both;
 }
 
-#buttonParagraph {
-	margin-top: 20px;
+.color, .tool {
+	 border: 1px solid black;
 }
 
-.color {
-	 border: 1px solid black;
+.tool {
+	width: 42px;
+	height: 29px;
+	padding-left: 0;
+	margin: 5px 0 0 5px;
+}
+
+#fill a:hover {
+    color: #D603A4;
 }
 
 img.selected {
 	border: 3px ridge #4D484E;
+}
+
+#saveCanvasArea {
+	clear: both;
 }

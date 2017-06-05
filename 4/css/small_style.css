@@ -6,6 +6,12 @@
 	height: 130px;
 }
 
+#main {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+}
+
 #drawingCanvas {
 	margin: 0px;
 }
@@ -15,5 +21,30 @@
     width: 100%;
 	/* height: 62.5%; */
     padding: 10px 0;
+	overflow: scroll;
+	order: 2;
+}
+
+#verticalToolBar {
+	width: 270px;
+	height: 130px;
+	order: 1;
+	margin: 0;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+.tool {
+	margin: 0 5px 0 0;
+}
+
+span 
+{
+    display: block;
+	margin-right: 5px;
+}
+
+#saveCanvasArea {
 	overflow: scroll;
 }
